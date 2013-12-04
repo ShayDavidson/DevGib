@@ -5,7 +5,7 @@ DevGib
 
 A Chrome extensions that analyzes the quality of dev-related links (e.g.: Github repositories, Stackoverflow questions) before accessing them.
 
-# Build #
+### Build ###
 
 In order to build you need to have `CoffeeScript` installed (simply run `sudo npm install -g coffee-script`).
 Now run either:
