@@ -12,7 +12,7 @@
         "run_at": "document_start",
         "js": [
             "lib/jquery-2.0.3.min.js",
-            "src/index.js"
+            "build/index.js"
         ],
         "css": [
             "assets/stylesheets/index.css"
