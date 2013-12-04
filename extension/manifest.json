@@ -1,0 +1,21 @@
+{
+    "name": "DevGib",
+    "version": "0.0.1",
+    "description": "Analyze the quality of dev-related links before accessing them",
+    "icons": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png" },
+    "background_page": "extension.html",
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["page/gitgib_ui.js", "page/page.js"],
+        "run_at": "document_start",
+        "css": ["page/page.css"]
+    }],
+    "minimum_chrome_version": "15",
+    "permissions": [
+        "tabs",
+        "<all_urls>"
+    ]
+}
