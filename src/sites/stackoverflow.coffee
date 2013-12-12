@@ -1,4 +1,4 @@
-class window.Stackoverflow extends window.AbstractSite
+class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSite
 
   key: 'stackoverflow'
   host: 'stackoverflow.com'

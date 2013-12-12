@@ -1,8 +1,16 @@
-#Stackoverflow = require('./sites/stackoverflow').Stackoverflow
+# namespaces
+
+window.DevGib =
+  Sites: {}
+
+# application
 
 $(document).ready ->
 
-  sites = [new Stackoverflow()]
+  sites = [
+    new DevGib.Sites.Stackoverflow(),
+    new DevGib.Sites.Github()
+  ]
 
   anchors = $(document).find('a')
   matchingAnchors = []

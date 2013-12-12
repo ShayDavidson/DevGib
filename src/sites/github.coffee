@@ -1,5 +1,5 @@
-class window.Github extends window.AbstractSite
+class DevGib.Sites.Github extends DevGib.Sites.AbstractSite
 
   key: 'github'
   host: 'github.com'
-  matchingRegex: /\/[a-z|A-Z]+\/[a-z|A-Z]+/
+  matchingRegex: /\/\D+\/\D+/

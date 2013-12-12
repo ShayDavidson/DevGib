@@ -1,4 +1,4 @@
-class window.AbstractSite
+class DevGib.Sites.AbstractSite
 
   key: null
   host: null
