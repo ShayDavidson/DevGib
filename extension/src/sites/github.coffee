@@ -2,4 +2,4 @@ class window.Github extends window.AbstractSite
 
   key: 'github'
   host: 'github.com'
-  matchingRegex: /\/questions\/d*/
+  matchingRegex: /\/[a-z|A-Z]+\/[a-z|A-Z]+/

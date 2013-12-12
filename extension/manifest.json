@@ -16,9 +16,6 @@
             "build/index.js",
             "build/sites/abstract_site.js",
             "build/sites/stackoverflow.js"
-        ],
-        "css": [
-            "assets/stylesheets/index.css"
         ]
     }],
     "minimum_chrome_version": "15",
