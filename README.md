@@ -5,16 +5,17 @@ DevGib
 
 A Chrome extensions that analyzes the quality of dev-related links (e.g.: Github repositories, Stackoverflow questions) before accessing them.
 
-### Build ###
+## Grunt ##
 
-In order to build you need to have `CoffeeScript` installed (simply run `sudo npm install -g coffee-script`).
-Now run either:
+DevGib uses grunt for building the extension. In order to use Grunt you need to:
 
-   `coffee --compile --output extension/build extension/src`
+1. Install the grunt-cli by running ```sudo npm install -g grunt-cli```.
+2. Install the npm dependencies by running ```npm install``` from the root folder.
 
-in order to compile the source once, or
+## Compile ##
 
-   `coffee --watch --output extension/build extension/src`
+To compile and preprocess the source files go into the root folder and run ```grunt```.
 
-in order to compile continuously as you make changes to the source.
+## Watch ##
 
+During development it is very useful to have a background task that monitors any changes to the source files and compiles and preprocess them on the fly. You can do that by running ```grunt watch```.
