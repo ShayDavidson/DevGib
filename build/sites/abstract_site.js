@@ -1,5 +1,5 @@
 (function() {
-  window.AbstractSite = (function() {
+  DevGib.Sites.AbstractSite = (function() {
     function AbstractSite() {}
 
     AbstractSite.prototype.key = null;

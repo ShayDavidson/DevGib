@@ -11,11 +11,18 @@
         "matches": ["<all_urls>"],
         "run_at": "document_start",
         "js": [
+
+            // lib
+
             "lib/jquery-2.0.3.min.js",
             "lib/underscore-1.5.2.min.js",
+
+            // extension
+
             "build/index.js",
             "build/sites/abstract_site.js",
-            "build/sites/stackoverflow.js"
+            "build/sites/stackoverflow.js",
+            "build/sites/github.js"
         ]
     }],
     "minimum_chrome_version": "15",

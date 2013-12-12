@@ -1,7 +1,11 @@
 (function() {
+  window.DevGib = {
+    Sites: {}
+  };
+
   $(document).ready(function() {
     var anchors, filtered_anchors, matchingAnchors, sites;
-    sites = [new Stackoverflow()];
+    sites = [new DevGib.Sites.Stackoverflow(), new DevGib.Sites.Github()];
     anchors = $(document).find('a');
     matchingAnchors = [];
     return filtered_anchors = _.filter(anchors, function(anchor) {

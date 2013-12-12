@@ -3,7 +3,7 @@
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  window.Github = (function(_super) {
+  DevGib.Sites.Github = (function(_super) {
     __extends(Github, _super);
 
     function Github() {
@@ -15,10 +15,10 @@
 
     Github.prototype.host = 'github.com';
 
-    Github.prototype.matchingRegex = /\/[a-z|A-Z]+\/[a-z|A-Z]+/;
+    Github.prototype.matchingRegex = /\/\D+\/\D+/;
 
     return Github;
 
-  })(window.AbstractSite);
+  })(DevGib.Sites.AbstractSite);
 
 }).call(this);
