@@ -12,7 +12,10 @@
         "run_at": "document_start",
         "js": [
             "lib/jquery-2.0.3.min.js",
-            "build/index.js"
+            "lib/underscore-1.5.2.min.js",
+            "build/index.js",
+            "build/sites/abstract_site.js",
+            "build/sites/stackoverflow.js"
         ],
         "css": [
             "assets/stylesheets/index.css"
