@@ -15,5 +15,3 @@ $(document).ready ->
     )
     matchingAnchors.push(anchor: anchor, site: site) if site
   )
-
-  console.log(filtered_anchors)
