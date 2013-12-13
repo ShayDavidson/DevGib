@@ -14,15 +14,23 @@
 
             // lib
 
-            "lib/jquery-2.0.3.min.js",
-            "lib/underscore-1.5.2.min.js",
+            "lib/js/jquery-2.0.3.min.js",
+            "lib/js/underscore-1.5.2.min.js",
 
             // extension
 
-            "build/index.js",
-            "build/sites/abstract_site.js",
-            "build/sites/stackoverflow.js",
-            "build/sites/github.js"
+            "build/js/index.js",
+            "build/js/sites/abstract_site.js",
+            "build/js/sites/stackoverflow.js",
+            "build/js/sites/github.js"
+        ],
+        "css": [
+
+            // lib
+
+            // extension
+
+            "build/css/index.css"
         ]
     }],
     "minimum_chrome_version": "15",

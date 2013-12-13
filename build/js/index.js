@@ -27,11 +27,11 @@
     });
     return _.each(targets, function(target) {
       var score, scoreElement;
-      score = 1;
+      score = Math.floor(Math.random() * 10) + 1;
       scoreElement = $('<span>☢&nbsp;</span>');
       scoreElement.addClass(DEVGIB_SCORE_ICON_CLASS);
-      scoreElement.addClass(target.site);
-      scoreElement.addClass("" + DEVGIB_SCORE_CLASS + "-score");
+      scoreElement.addClass(target.site.key);
+      scoreElement.addClass("" + DEVGIB_SCORE_CLASS + "-" + score);
       return target.anchor.prepend(scoreElement);
     });
   });

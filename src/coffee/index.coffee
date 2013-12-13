@@ -3,7 +3,7 @@
 window.DevGib =
   Sites: {}
 
-# application
+# extension
 
 $(document).ready ->
 
@@ -31,10 +31,10 @@ $(document).ready ->
   )
 
   _.each(targets, (target) ->
-    score = 1
+    score = Math.floor(Math.random() * 10) + 1
     scoreElement = $('<span>☢&nbsp;</span>')
     scoreElement.addClass(DEVGIB_SCORE_ICON_CLASS)
-    scoreElement.addClass(target.site)
-    scoreElement.addClass("#{DEVGIB_SCORE_CLASS}-score")
+    scoreElement.addClass(target.site.key)
+    scoreElement.addClass("#{DEVGIB_SCORE_CLASS}-#{score}")
     target.anchor.prepend(scoreElement)
   )
