@@ -1,10 +1,12 @@
 @font-face {
+  $fa-font-path: 'chrome-extension://__MSG_@@extension_id__/lib/fonts';
+
   font-family: 'FontAwesome';
-  src: url('../../lib/fonts/fontawesome-webfont.eot');
-  src: url('../../lib/fonts/fontawesome-webfont.eot') format('embedded-opentype'),
-  url('../../lib/fonts/fontawesome-webfont.woff') format('woff'),
-  url('../../lib/fonts/fontawesome-webfont.ttf') format('truetype'),
-  url('../../lib/fonts/fontawesome-webfont.svg') format('svg');
+  src: url('#{$fa-font-path}/fontawesome-webfont.eot');
+  src: url('#{$fa-font-path}/fontawesome-webfont.eot') format('embedded-opentype'),
+  url('#{$fa-font-path}/fontawesome-webfont.woff') format('woff'),
+  url('#{$fa-font-path}/fontawesome-webfont.ttf') format('truetype'),
+  url('#{$fa-font-path}/fontawesome-webfont.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }

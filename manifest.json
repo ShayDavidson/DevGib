@@ -32,6 +32,13 @@
             "build/css/index.css"
         ]
     }],
+    "web_accessible_resources": [
+        "lib/fonts/fontawesome-webfont.eot",
+        "lib/fonts/fontawesome-webfont.svg",
+        "lib/fonts/fontawesome-webfont.ttf",
+        "lib/fonts/fontawesome-webfont.woff",
+        "lib/fonts/FontAwesome.otf"
+    ],
     "minimum_chrome_version": "15",
     "permissions": [
         "tabs",
