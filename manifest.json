@@ -20,6 +20,7 @@
             // extension
 
             "build/js/index.js",
+            "build/js/target.js",
             "build/js/sites/abstract_site.js",
             "build/js/sites/stackoverflow.js",
             "build/js/sites/github.js"
