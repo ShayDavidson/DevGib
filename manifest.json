@@ -27,8 +27,6 @@
         ],
         "css": [
 
-            // lib
-
             // extension
 
             "build/css/index.css"

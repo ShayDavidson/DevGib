@@ -17,6 +17,8 @@
 
     Github.prototype.matchingRegex = /\/\D+\/\D+\/?/;
 
+    Github.prototype.icon = '\f113';
+
     return Github;
 
   })(DevGib.Sites.AbstractSite);

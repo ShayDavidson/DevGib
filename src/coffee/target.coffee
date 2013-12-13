@@ -11,7 +11,7 @@ class DevGib.Target
 
     score = 1
 
-    @spanEl = $('<span>☢ &nbsp;</span>')
+    @spanEl = $("<span>#{@site.icon}&nbsp;</span>")
     @spanEl.addClass(@DEVGIB_SCORE_ICON_CLASS)
     @spanEl.addClass(@site.key)
     @spanEl.addClass("#{@DEVGIB_SCORE_CLASS}-#{score}")

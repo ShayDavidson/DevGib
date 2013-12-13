@@ -17,6 +17,8 @@
 
     Stackoverflow.prototype.matchingRegex = /questions\/\d+/;
 
+    Stackoverflow.prototype.icon = '\f16c';
+
     return Stackoverflow;
 
   })(DevGib.Sites.AbstractSite);
