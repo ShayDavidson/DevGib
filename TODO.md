@@ -1,6 +1,7 @@
 # TODO #
 
 * Clean css files separate into files.
+* Fix in Google.
 * Fix Github repository regex.
 * Remove ? from Stackoverflow regex (to make it disappear from answer tabs).
 * Clean up `index.js` file.
