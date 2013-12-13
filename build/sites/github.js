@@ -15,7 +15,7 @@
 
     Github.prototype.host = 'github.com';
 
-    Github.prototype.matchingRegex = /\/\D+\/\D+/;
+    Github.prototype.matchingRegex = /\/\D+\/\D+\/?/;
 
     return Github;
 

@@ -4,23 +4,35 @@
   };
 
   $(document).ready(function() {
-    var anchors, filtered_anchors, matchingAnchors, sites;
+    var DEVGIB_SCORE_CLASS, DEVGIB_SCORE_ICON_CLASS, anchors, sites, targets;
+    DEVGIB_SCORE_ICON_CLASS = 'devgib-score-icon';
+    DEVGIB_SCORE_CLASS = 'score';
     sites = [new DevGib.Sites.Stackoverflow(), new DevGib.Sites.Github()];
     anchors = $(document).find('a');
-    matchingAnchors = [];
-    return filtered_anchors = _.filter(anchors, function(anchor) {
-      var site, url;
+    targets = [];
+    _.each(anchors, function(anchor) {
+      var dataHref, href, site;
       anchor = $(anchor);
-      url = anchor.attr('href');
+      href = anchor.attr('href');
+      dataHref = anchor.attr('data-href');
       site = _.find(sites, function(site) {
-        return site.isURLMatching(url);
+        return site.isURLMatching(href) || site.isURLMatching(dataHref);
       });
       if (site) {
-        return matchingAnchors.push({
+        return targets.push({
           anchor: anchor,
           site: site
         });
       }
+    });
+    return _.each(targets, function(target) {
+      var score, scoreElement;
+      score = 1;
+      scoreElement = $('<span>☢&nbsp;</span>');
+      scoreElement.addClass(DEVGIB_SCORE_ICON_CLASS);
+      scoreElement.addClass(target.site);
+      scoreElement.addClass("" + DEVGIB_SCORE_CLASS + "-score");
+      return target.anchor.prepend(scoreElement);
     });
   });
 
