@@ -32,6 +32,7 @@
       scoreElement.addClass(DEVGIB_SCORE_ICON_CLASS);
       scoreElement.addClass(target.site.key);
       scoreElement.addClass("" + DEVGIB_SCORE_CLASS + "-" + score);
+      scoreElement.attr('title', "DevGib - " + target.site.key + " score: " + score);
       return target.anchor.prepend(scoreElement);
     });
   });
