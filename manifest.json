@@ -53,6 +53,7 @@
     "minimum_chrome_version": "15",
     "permissions": [
         "tabs",
+        "storage",
         "<all_urls>"
     ]
 }
