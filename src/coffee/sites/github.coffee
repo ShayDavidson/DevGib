@@ -1,4 +1,4 @@
-class DevGib.Sites.Github extends DevGib.Sites.AbstractSite
+class DevGib.Sites.Github extends DevGib.Sites.AbstractSiteModel
 
   key: 'github'
   host: 'github.com'

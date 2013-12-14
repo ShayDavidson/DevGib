@@ -1,4 +1,4 @@
-class DevGib.Sites.AbstractSite
+class DevGib.Sites.AbstractSiteModel
 
   key: null
   host: null

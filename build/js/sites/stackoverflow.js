@@ -21,6 +21,6 @@
 
     return Stackoverflow;
 
-  })(DevGib.Sites.AbstractSite);
+  })(DevGib.Sites.AbstractSiteModel);
 
 }).call(this);

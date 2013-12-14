@@ -1,16 +1,19 @@
 class DevGib.Icons.IconView
 
   DEVGIB_SCORE_ICON_CLASS: 'devgib-score-icon'
-  DEVGIB_SCORE_CLASS: 'score'
+  DEVGIB_SCORE_CLASS_PREFIX: 'score'
 
   anchorEl: null
   spanEl: null
-  site: null
+  siteModel: null
 
-  constructor: (anchorEl) ->
-    @spanEl = $("<span>&nbsp;</span>")
+  constructor: (@anchorEl, @siteModel) ->
+    score = 1
+    @spanEl = $("<span>#{siteModel.icon}&nbsp;</span>")
     @spanEl.addClass(@DEVGIB_SCORE_ICON_CLASS)
-    @spanEl.addClass(@site.key)
-    @spanEl.addClass("#{@DEVGIB_SCORE_CLASS}-#{score}")
-    @spanEl.attr('title', "DevGib - #{@site.key} score: #{score}")
-    anchorEl.prepend(@spanEl)
+    @spanEl.addClass(@siteModel.key)
+    @spanEl.addClass("#{@DEVGIB_SCORE_CLASS_PREFIX}-#{score}")
+    @spanEl.attr('title', "DevGib - #{@siteModel.key} score: #{score}")
+
+  show: ->
+    @anchorEl.prepend(@spanEl)

@@ -20,9 +20,8 @@
             // extension
 
             "build/js/index.js",
-            "build/js/icons/icon_controller.js",
             "build/js/icons/icon_view.js",
-            "build/js/sites/abstract_site.js",
+            "build/js/sites/abstract_site_model.js",
             "build/js/sites/stackoverflow.js",
             "build/js/sites/github.js"
         ],
