@@ -3,5 +3,4 @@ class DevGib.Sites.Github extends DevGib.Sites.AbstractSiteModel
   key: 'github'
   icon: '&#xf113;'
   host: 'github.com'
-  matchingRegex: /^https:\/\/github.com\/[\w\-\.]+\/[\w\-\.]+\/?$/
-
+  matchingRegex: /^https:\/\/github.com\/((?!settings|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/

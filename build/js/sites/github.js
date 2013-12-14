@@ -17,7 +17,7 @@
 
     Github.prototype.host = 'github.com';
 
-    Github.prototype.matchingRegex = /^https:\/\/github.com\/[\w\-\.]+\/[\w\-\.]+\/?$/;
+    Github.prototype.matchingRegex = /^https:\/\/github.com\/((?!settings|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/;
 
     return Github;
 

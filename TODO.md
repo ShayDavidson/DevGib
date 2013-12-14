@@ -5,7 +5,6 @@
 __Icons__
 
 * Fix ellipsis for long questions in Google.
-* Fix Github repository regex - contain numbers and special chars, but not 'settings'/'site'/'organizations'/'dashboard'/'blog'/'repositories'.
 
 __Extension__
 
