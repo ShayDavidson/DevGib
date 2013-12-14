@@ -8,7 +8,7 @@ class DevGib.Icons.IconView
   siteModel: null
 
   constructor: (@anchorEl, @siteModel) ->
-    score = 1
+    score = Math.floor(Math.random()*10) + 1
     @spanEl = $("<span>#{siteModel.icon}&nbsp;</span>")
     @spanEl.addClass(@DEVGIB_SCORE_ICON_CLASS)
     @spanEl.addClass(@siteModel.key)
