@@ -2,7 +2,6 @@
 
 * Fix in Google.
 * Fix Github repository regex.
-* Remove ? from Stackoverflow regex (to make it disappear from answer tabs).
 * Clean up `index.js` file.
 * Add grunt-chrome-package.
 * Add grunt minify/contact for js.

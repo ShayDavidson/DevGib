@@ -31,7 +31,7 @@
     };
 
     Extension.prototype._getTargetSites = function() {
-      return [new DevGib.Sites.Stackoverflow(), new DevGib.Sites.Github()];
+      return [new DevGib.Sites.Stackoverflow()];
     };
 
     return Extension;

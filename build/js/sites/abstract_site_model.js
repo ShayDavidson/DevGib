@@ -4,12 +4,22 @@
 
     AbstractSiteModel.prototype.key = null;
 
+    AbstractSiteModel.prototype.icon = null;
+
     AbstractSiteModel.prototype.host = null;
 
     AbstractSiteModel.prototype.matchingRegex = null;
 
     AbstractSiteModel.prototype.isURLMatching = function(url) {
-      return (window.location.hostname.indexOf(this.host) === 0) && (this.matchingRegex.test(url));
+      var matchingHost, matchingPath, noHash, noQuery;
+      if (!url) {
+        return false;
+      }
+      matchingHost = window.location.hostname.indexOf(this.host) === 0;
+      matchingPath = this.matchingRegex.test(url);
+      noQuery = url.indexOf('?') === -1;
+      noHash = url.indexOf('#') === -1;
+      return matchingHost && matchingPath && noQuery && noHash;
     };
 
     return AbstractSiteModel;

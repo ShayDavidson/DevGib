@@ -13,11 +13,11 @@
 
     Github.prototype.key = 'github';
 
+    Github.prototype.icon = '&#xf113;';
+
     Github.prototype.host = 'github.com';
 
     Github.prototype.matchingRegex = /\/\D+\/\D+\/?/;
-
-    Github.prototype.icon = '&#xf113;';
 
     return Github;
 

@@ -13,11 +13,11 @@
 
     Stackoverflow.prototype.key = 'stackoverflow';
 
+    Stackoverflow.prototype.icon = '&#xf16c;';
+
     Stackoverflow.prototype.host = 'stackoverflow.com';
 
     Stackoverflow.prototype.matchingRegex = /questions\/\d+/;
-
-    Stackoverflow.prototype.icon = '&#xf16c;';
 
     return Stackoverflow;
 
