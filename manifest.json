@@ -9,7 +9,7 @@
         "128": "assets/icons/icon128.png" },
     "content_scripts": [{
         "matches": ["<all_urls>"],
-        "run_at": "document_start",
+        "run_at": "document_end",
         "js": [
 
             // lib

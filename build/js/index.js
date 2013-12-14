@@ -1,4 +1,6 @@
 (function() {
+  var run, runNodeInserted;
+
   window.DevGib = {
     Icons: {},
     Sites: {}
@@ -14,6 +16,7 @@
       return _.each(anchors, function(anchor) {
         var href, icon, site;
         anchor = $(anchor);
+        anchor.attr('data-devgib', 'tagged');
         href = anchor.attr('href');
         if (site = _.find(sites, function(site) {
           return site.isURLMatching(href);
@@ -25,7 +28,7 @@
     };
 
     Extension.prototype._getPageAnchors = function() {
-      return $(document).find('a');
+      return $(document).find("a:not([data-devgib='tagged'])");
     };
 
     Extension.prototype._getTargetSites = function() {
@@ -43,8 +46,18 @@
 
   })();
 
-  $(document).ready(function() {
+  run = function() {
     return DevGib.Extension.sharedInstance().run();
-  });
+  };
+
+  runNodeInserted = function() {
+    $(document).unbind('DOMNodeInserted');
+    run();
+    return $(document).bind('DOMNodeInserted', runNodeInserted);
+  };
+
+  $(document).ready(run);
+
+  $(document).bind('DOMNodeInserted', runNodeInserted);
 
 }).call(this);

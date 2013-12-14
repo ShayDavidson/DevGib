@@ -13,6 +13,8 @@ class DevGib.Extension
       anchors = @_getPageAnchors()
       _.each(anchors, (anchor) ->
         anchor = $(anchor)
+        anchor.attr('data-devgib', 'tagged')
+
         href = anchor.attr('href')
 
         if site = _.find(sites, (site) -> site.isURLMatching(href))
@@ -21,7 +23,7 @@ class DevGib.Extension
       )
 
     _getPageAnchors: ->
-      $(document).find('a')
+      $(document).find("a:not([data-devgib='tagged'])")
 
     _getTargetSites: ->
       [
@@ -36,4 +38,11 @@ class DevGib.Extension
 
 # run
 
-$(document).ready -> DevGib.Extension.sharedInstance().run()
+run = -> DevGib.Extension.sharedInstance().run()
+runNodeInserted = ->
+  $(document).unbind 'DOMNodeInserted'
+  run()
+  $(document).bind 'DOMNodeInserted', runNodeInserted
+
+$(document).ready run
+$(document).bind 'DOMNodeInserted', runNodeInserted
