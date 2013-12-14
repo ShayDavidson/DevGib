@@ -6,8 +6,6 @@
 
     AbstractSiteModel.prototype.icon = null;
 
-    AbstractSiteModel.prototype.host = null;
-
     AbstractSiteModel.prototype.matchingRegex = null;
 
     AbstractSiteModel.prototype.isURLMatching = function(url) {
@@ -20,6 +18,8 @@
       noHashInURL = url.indexOf('#') === -1;
       return matchingURL && noQueryInURL && noHashInURL;
     };
+
+    AbstractSiteModel.prototype.fetchScore = function() {};
 
     AbstractSiteModel.prototype._sanitizedURL = function(url) {
       if (url.indexOf('http') < 0) {

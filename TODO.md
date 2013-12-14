@@ -2,10 +2,6 @@
 
 ### FEATURES ###
 
-__Icons__
-
-* Fix ellipsis for long questions in Google.
-
 __Extension__
 
 * Allow to enable/disable sites from the extension.
@@ -20,7 +16,7 @@ __Scoring__
 
 ### REFACTOR ###
 
-* Consider handing the icons an instance of a site each instead of each having the singleton.
+* Consider handing the icons an instance of a site each instead of each having the singleton, and save the url for each model.
 * Use mutation observers instead of dom events and improve performance for anchor searching.
 * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
 

@@ -15,8 +15,6 @@
 
     Stackoverflow.prototype.icon = '&#xf16c;';
 
-    Stackoverflow.prototype.host = 'stackoverflow.com';
-
     Stackoverflow.prototype.matchingRegex = /^http:\/\/stackoverflow.com\/questions\/\d+/;
 
     return Stackoverflow;

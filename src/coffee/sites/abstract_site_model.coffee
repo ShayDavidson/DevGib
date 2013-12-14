@@ -2,7 +2,6 @@ class DevGib.Sites.AbstractSiteModel
 
   key: null
   icon: null
-  host: null
   matchingRegex: null
 
   isURLMatching: (url) ->
@@ -13,6 +12,8 @@ class DevGib.Sites.AbstractSiteModel
     noHashInURL  = url.indexOf('#') == -1
 
     matchingURL && noQueryInURL && noHashInURL
+
+  fetchScore: ->
 
   _sanitizedURL: (url) ->
     if url.indexOf('http') < 0

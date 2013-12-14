@@ -2,5 +2,6 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
 
   key: 'stackoverflow'
   icon: '&#xf16c;'
-  host: 'stackoverflow.com'
   matchingRegex: /^http:\/\/stackoverflow.com\/questions\/\d+/
+
+#    https://api.stackexchange.com/2.1/questions/2078915/answers?site=stackoverflow&order=desc&sort=activity&filter=default
