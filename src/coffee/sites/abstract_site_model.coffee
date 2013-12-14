@@ -8,11 +8,16 @@ class DevGib.Sites.AbstractSiteModel
   isURLMatching: (url) ->
     return false unless url
 
-    matchingHost = window.location.hostname.indexOf(@host) == 0
-    matchingPath = @matchingRegex.test(url)
-    noQuery      = url.indexOf('?') == -1
-    noHash       = url.indexOf('#') == -1
-    console.log(url,matchingHost && matchingPath && noQuery && noHash)
+    matchingURL  = @matchingRegex.test(@_sanitizedURL(url))
+    noQueryInURL = url.indexOf('?') == -1
+    noHashInURL  = url.indexOf('#') == -1
 
-    matchingHost && matchingPath && noQuery && noHash
+    matchingURL && noQueryInURL && noHashInURL
+
+  _sanitizedURL: (url) ->
+    if url.indexOf('http') < 0
+      "#{window.location.protocol}//#{window.location.hostname}#{url}"
+    else
+      url
+
 

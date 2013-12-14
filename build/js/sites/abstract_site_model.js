@@ -11,16 +11,22 @@
     AbstractSiteModel.prototype.matchingRegex = null;
 
     AbstractSiteModel.prototype.isURLMatching = function(url) {
-      var matchingHost, matchingPath, noHash, noQuery;
+      var matchingURL, noHashInURL, noQueryInURL;
       if (!url) {
         return false;
       }
-      matchingHost = window.location.hostname.indexOf(this.host) === 0;
-      matchingPath = this.matchingRegex.test(url);
-      noQuery = url.indexOf('?') === -1;
-      noHash = url.indexOf('#') === -1;
-      console.log(url, matchingHost && matchingPath && noQuery && noHash);
-      return matchingHost && matchingPath && noQuery && noHash;
+      matchingURL = this.matchingRegex.test(this._sanitizedURL(url));
+      noQueryInURL = url.indexOf('?') === -1;
+      noHashInURL = url.indexOf('#') === -1;
+      return matchingURL && noQueryInURL && noHashInURL;
+    };
+
+    AbstractSiteModel.prototype._sanitizedURL = function(url) {
+      if (url.indexOf('http') < 0) {
+        return "" + window.location.protocol + "//" + window.location.hostname + url;
+      } else {
+        return url;
+      }
     };
 
     return AbstractSiteModel;

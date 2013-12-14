@@ -15,13 +15,8 @@ class DevGib.Extension
         anchor = $(anchor)
 
         href = anchor.attr('href')
-        dataHref = anchor.attr('data-href')
 
-        site = _.find(sites, (site) ->
-          site.isURLMatching(href) || site.isURLMatching(dataHref)
-        )
-
-        if site
+        if site = _.find(sites, (site) -> site.isURLMatching(href))
           icon = new DevGib.Icons.IconView(anchor, site)
           icon.show()
       )
@@ -41,4 +36,4 @@ class DevGib.Extension
 $(document).ready ->
 
   extension = new DevGib.Extension()
-  extension.run()
+  setTimeout((-> extension.run()), 0)

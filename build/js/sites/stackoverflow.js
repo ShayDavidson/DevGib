@@ -17,7 +17,7 @@
 
     Stackoverflow.prototype.host = 'stackoverflow.com';
 
-    Stackoverflow.prototype.matchingRegex = /questions\/\d+/;
+    Stackoverflow.prototype.matchingRegex = /^http:\/\/stackoverflow.com\/questions\/\d+/;
 
     return Stackoverflow;
 

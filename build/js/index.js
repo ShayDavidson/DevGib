@@ -12,14 +12,12 @@
       sites = this._getTargetSites();
       anchors = this._getPageAnchors();
       return _.each(anchors, function(anchor) {
-        var dataHref, href, icon, site;
+        var href, icon, site;
         anchor = $(anchor);
         href = anchor.attr('href');
-        dataHref = anchor.attr('data-href');
-        site = _.find(sites, function(site) {
-          return site.isURLMatching(href) || site.isURLMatching(dataHref);
-        });
-        if (site) {
+        if (site = _.find(sites, function(site) {
+          return site.isURLMatching(href);
+        })) {
           icon = new DevGib.Icons.IconView(anchor, site);
           return icon.show();
         }
@@ -41,7 +39,9 @@
   $(document).ready(function() {
     var extension;
     extension = new DevGib.Extension();
-    return extension.run();
+    return setTimeout((function() {
+      return extension.run();
+    }), 0);
   });
 
 }).call(this);
