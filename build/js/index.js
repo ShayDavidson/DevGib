@@ -32,16 +32,19 @@
       return [new DevGib.Sites.Stackoverflow(), new DevGib.Sites.Github()];
     };
 
+    Extension.sharedInstance = function() {
+      if (!this._instance) {
+        this._instance = new DevGib.Extension();
+      }
+      return this._instance;
+    };
+
     return Extension;
 
   })();
 
   $(document).ready(function() {
-    var extension;
-    extension = new DevGib.Extension();
-    return setTimeout((function() {
-      return extension.run();
-    }), 0);
+    return DevGib.Extension.sharedInstance().run();
   });
 
 }).call(this);

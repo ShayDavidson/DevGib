@@ -13,7 +13,6 @@ class DevGib.Extension
       anchors = @_getPageAnchors()
       _.each(anchors, (anchor) ->
         anchor = $(anchor)
-
         href = anchor.attr('href')
 
         if site = _.find(sites, (site) -> site.isURLMatching(href))
@@ -30,10 +29,11 @@ class DevGib.Extension
         new DevGib.Sites.Github()
       ]
 
+    @sharedInstance: ->
+      @_instance = new DevGib.Extension() unless @_instance
+      return @_instance
+
 
 # run
 
-$(document).ready ->
-
-  extension = new DevGib.Extension()
-  setTimeout((-> extension.run()), 0)
+$(document).ready -> DevGib.Extension.sharedInstance().run()
