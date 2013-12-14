@@ -1,7 +1,7 @@
 # TODO #
 
 * Fix in Google.
-* Fix Github repository regex.
+* Fix Github repository regex - contain numbers and special chars, but not 'settings'/'site'/'dashboard'/'blog'/'repositories'.
 * Clean up `index.js` file.
 * Add grunt-chrome-package.
 * Add grunt minify/contact for js.

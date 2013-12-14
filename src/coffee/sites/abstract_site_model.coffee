@@ -12,6 +12,7 @@ class DevGib.Sites.AbstractSiteModel
     matchingPath = @matchingRegex.test(url)
     noQuery      = url.indexOf('?') == -1
     noHash       = url.indexOf('#') == -1
+    console.log(url,matchingHost && matchingPath && noQuery && noHash)
 
     matchingHost && matchingPath && noQuery && noHash
 

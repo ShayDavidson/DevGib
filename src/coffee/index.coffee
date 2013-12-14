@@ -32,7 +32,7 @@ class DevGib.Extension
     _getTargetSites: ->
       [
         new DevGib.Sites.Stackoverflow(),
-#        new DevGib.Sites.Github()
+        new DevGib.Sites.Github()
       ]
 
 

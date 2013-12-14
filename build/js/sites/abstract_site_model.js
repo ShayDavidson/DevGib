@@ -19,6 +19,7 @@
       matchingPath = this.matchingRegex.test(url);
       noQuery = url.indexOf('?') === -1;
       noHash = url.indexOf('#') === -1;
+      console.log(url, matchingHost && matchingPath && noQuery && noHash);
       return matchingHost && matchingPath && noQuery && noHash;
     };
 
