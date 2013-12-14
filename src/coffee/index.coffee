@@ -1,11 +1,3 @@
-# namespaces
-
-window.DevGib =
-  Icons: {}
-  Sites: {}
-
-# extension
-
 class DevGib.Extension
 
     run: ->

@@ -1,11 +1,6 @@
 (function() {
   var run, runNodeInserted;
 
-  window.DevGib = {
-    Icons: {},
-    Sites: {}
-  };
-
   DevGib.Extension = (function() {
     function Extension() {}
 
