@@ -1,4 +1,4 @@
-class DevGib.Target
+class DevGib.Icons.IconView
 
   DEVGIB_SCORE_ICON_CLASS: 'devgib-score-icon'
   DEVGIB_SCORE_CLASS: 'score'
@@ -7,11 +7,8 @@ class DevGib.Target
   spanEl: null
   site: null
 
-  constructor: (anchorEl, @site) ->
-
-    score = 1
-
-    @spanEl = $("<span>#{@site.icon}&nbsp;</span>")
+  constructor: (anchorEl) ->
+    @spanEl = $("<span>&nbsp;</span>")
     @spanEl.addClass(@DEVGIB_SCORE_ICON_CLASS)
     @spanEl.addClass(@site.key)
     @spanEl.addClass("#{@DEVGIB_SCORE_CLASS}-#{score}")

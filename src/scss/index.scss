@@ -1,5 +1,5 @@
 @font-face {
-  $fa-font-path: 'chrome-extension://__MSG_@@extension_id__/lib/fonts';
+  $fa-font-path: 'chrome-extension://__MSG_@@extension_id__/assets/fonts';
 
   font-family: 'FontAwesome';
   src: url('#{$fa-font-path}/fontawesome-webfont.eot');
@@ -11,10 +11,9 @@
   font-style: normal;
 }
 
-
 .devgib-score-icon {
 
-  font-family: FontAwesome;
+  font-family: 'FontAwesome';
   font-style:  normal;
   font-weight: normal;
   line-height: 1;

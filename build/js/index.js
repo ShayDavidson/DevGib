@@ -1,5 +1,6 @@
 (function() {
   window.DevGib = {
+    Icons: {},
     Sites: {}
   };
 
@@ -16,7 +17,7 @@
         return site.isURLMatching(href) || site.isURLMatching(dataHref);
       });
       if (site) {
-        return new DevGib.Target(anchor, site);
+        return new DevGib.Icons.IconController(anchor, site);
       }
     });
   });

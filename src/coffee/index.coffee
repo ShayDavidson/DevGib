@@ -1,6 +1,7 @@
 # namespaces
 
 window.DevGib =
+  Icons: {}
   Sites: {}
 
 # extension
@@ -23,5 +24,5 @@ $(document).ready ->
     site = _.find(sites, (site) ->
       site.isURLMatching(href) || site.isURLMatching(dataHref)
     )
-    new DevGib.Target(anchor, site) if site
+    new DevGib.Icons.IconController(anchor, site) if site
   )
