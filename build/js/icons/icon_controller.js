@@ -4,13 +4,17 @@
 
     IconController.prototype.iconView = null;
 
-    function IconController(anchorEl, siteModel) {
+    IconController.prototype.url = null;
+
+    function IconController(anchorEl, url, siteModel) {
+      this.url = url;
       this.siteModel = siteModel;
       this.iconView = new DevGib.Icons.IconView(anchorEl, siteModel);
     }
 
     IconController.prototype.show = function() {
-      return this.iconView.show();
+      this.iconView.attach();
+      return this.iconView.showSpinner();
     };
 
     return IconController;

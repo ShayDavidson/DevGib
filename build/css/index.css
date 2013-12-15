@@ -5,10 +5,19 @@
   src: url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.eot");
   src: url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.eot") format("embedded-opentype"), url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.woff") format("woff"), url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.ttf") format("truetype"), url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.svg") format("svg"); }
 
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(359deg); } }
+
 .devgib-score-icon {
   font-family: 'FontAwesome';
   font-weight: normal;
   -webkit-font-smoothing: antialiased; }
+  .devgib-score-icon.spinning {
+    -webkit-animation: spin 2s infinite linear; }
   .devgib-score-icon.score-1 {
     color: #ff0300; }
   .devgib-score-icon.score-2 {

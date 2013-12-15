@@ -1,10 +1,15 @@
 @import 'fonts';
+@import 'animations';
 
 .devgib-score-icon {
 
   font-family: 'FontAwesome';
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
+
+  &.spinning {
+    -webkit-animation: spin 2s infinite linear;
+  }
 
   &.score-1  { color: #ff0300; }
   &.score-2  { color: #e65401; }
@@ -16,5 +21,4 @@
   &.score-8  { color: #57e826; }
   &.score-9  { color: #3595ff; }
   &.score-10 { color: #145bc1; }
-
 }

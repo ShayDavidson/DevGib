@@ -13,21 +13,13 @@
       if (!url) {
         return false;
       }
-      matchingURL = this.matchingRegex.test(this._sanitizedURL(url));
+      matchingURL = this.matchingRegex.test(url);
       noQueryInURL = url.indexOf('?') === -1;
       noHashInURL = url.indexOf('#') === -1;
       return matchingURL && noQueryInURL && noHashInURL;
     };
 
     AbstractSiteModel.prototype.fetchScore = function() {};
-
-    AbstractSiteModel.prototype._sanitizedURL = function(url) {
-      if (url.indexOf('http') < 0) {
-        return "" + window.location.protocol + "//" + window.location.hostname + url;
-      } else {
-        return url;
-      }
-    };
 
     return AbstractSiteModel;
 

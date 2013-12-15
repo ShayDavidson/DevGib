@@ -3,16 +3,25 @@ class DevGib.Extension
     run: ->
       sites = @_getTargetSites()
       anchors = @_getPageAnchors()
-      _.each(anchors, (anchor) ->
+
+      _.each(anchors, (anchor) =>
         anchor = $(anchor)
         anchor.attr('data-devgib', 'tagged')
 
-        href = anchor.attr('href')
+        url = anchor.attr('href')
+        return unless url
+        sanitizedURL = @_sanitizedURL(url)
 
-        if site = _.find(sites, (site) -> site.isURLMatching(href))
-          icon = new DevGib.Icons.IconView(anchor, site)
+        if site = _.find(sites, (site) -> site.isURLMatching(sanitizedURL))
+          icon = new DevGib.Icons.IconController(anchor, sanitizedURL, site)
           icon.show()
       )
+
+    _sanitizedURL: (url) ->
+      if url.indexOf('http') < 0
+        "#{window.location.protocol}//#{window.location.hostname}#{url}"
+      else
+        url
 
     _getPageAnchors: ->
       $(document).find("a:not([data-devgib='tagged'])")

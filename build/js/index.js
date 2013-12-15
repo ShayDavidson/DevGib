@@ -5,21 +5,34 @@
     function Extension() {}
 
     Extension.prototype.run = function() {
-      var anchors, sites;
+      var anchors, sites,
+        _this = this;
       sites = this._getTargetSites();
       anchors = this._getPageAnchors();
       return _.each(anchors, function(anchor) {
-        var href, icon, site;
+        var icon, sanitizedURL, site, url;
         anchor = $(anchor);
         anchor.attr('data-devgib', 'tagged');
-        href = anchor.attr('href');
+        url = anchor.attr('href');
+        if (!url) {
+          return;
+        }
+        sanitizedURL = _this._sanitizedURL(url);
         if (site = _.find(sites, function(site) {
-          return site.isURLMatching(href);
+          return site.isURLMatching(sanitizedURL);
         })) {
-          icon = new DevGib.Icons.IconView(anchor, site);
+          icon = new DevGib.Icons.IconController(anchor, sanitizedURL, site);
           return icon.show();
         }
       });
+    };
+
+    Extension.prototype._sanitizedURL = function(url) {
+      if (url.indexOf('http') < 0) {
+        return "" + window.location.protocol + "//" + window.location.hostname + url;
+      } else {
+        return url;
+      }
     };
 
     Extension.prototype._getPageAnchors = function() {

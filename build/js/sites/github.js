@@ -15,7 +15,7 @@
 
     Github.prototype.icon = '&#xf113;';
 
-    Github.prototype.matchingRegex = /^https:\/\/github.com\/((?!settings|explore|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/;
+    Github.prototype.matchingRegex = /^https:\/\/github.com\/((?!settings|account|explore|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/;
 
     return Github;
 
