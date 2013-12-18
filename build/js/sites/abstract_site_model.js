@@ -19,7 +19,11 @@
       return matchingURL && noQueryInURL && noHashInURL;
     };
 
-    AbstractSiteModel.prototype.fetchScoreForURL = function(url, success, failure) {};
+    AbstractSiteModel.prototype.fetchScoreForURL = function(url, success, failure) {
+      return setTimeout((function() {
+        return success(Math.floor(Math.random() * 10) + 1);
+      }), Math.floor(Math.random() * 2000 + 500));
+    };
 
     AbstractSiteModel.prototype._onFetchDataSuccess = function(data) {};
 

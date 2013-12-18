@@ -17,8 +17,6 @@
 
     Github.prototype.matchingRegex = /^https:\/\/github.com\/((?!settings|account|explore|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/;
 
-    Github.prototype.fetchScoreForURL = function(url, success, failure) {};
-
     return Github;
 
   })(DevGib.Sites.AbstractSiteModel);

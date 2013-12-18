@@ -14,6 +14,7 @@ class DevGib.Sites.AbstractSiteModel
     matchingURL && noQueryInURL && noHashInURL
 
   fetchScoreForURL: (url, success, failure) -> # override by subclass.
+    setTimeout((-> success(Math.floor(Math.random()*10) + 1)), Math.floor(Math.random()*2000 + 500))
 
   _onFetchDataSuccess: (data) -> # override by subclass.
 

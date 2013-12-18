@@ -6,6 +6,7 @@ class DevGib.Icons.IconController
 
   constructor: (anchorEl, @url, @siteModel) ->
     @iconView = new DevGib.Icons.IconView(anchorEl, siteModel)
+    _.bindAll(@, '_onFetchScoreSuccess', '_onFetchScoreFailure')
 
   show: ->
     @iconView.attach()

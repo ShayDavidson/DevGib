@@ -10,6 +10,7 @@
       this.url = url;
       this.siteModel = siteModel;
       this.iconView = new DevGib.Icons.IconView(anchorEl, siteModel);
+      _.bindAll(this, '_onFetchScoreSuccess', '_onFetchScoreFailure');
     }
 
     IconController.prototype.show = function() {
