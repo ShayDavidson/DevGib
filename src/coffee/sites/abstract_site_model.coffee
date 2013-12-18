@@ -15,9 +15,9 @@ class DevGib.Sites.AbstractSiteModel
 
   fetchScoreForURL: (url, success, failure) -> # override by subclass.
 
-  _onFetchSuccess: (data) -> # override by subclass.
+  _onFetchDataSuccess: (data) -> # override by subclass.
 
-  _onFetchFailure: ->
+  _onFetchDataFailure: ->
 
 
 

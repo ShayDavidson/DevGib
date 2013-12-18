@@ -21,9 +21,9 @@
 
     AbstractSiteModel.prototype.fetchScoreForURL = function(url, success, failure) {};
 
-    AbstractSiteModel.prototype._onFetchSuccess = function(data) {};
+    AbstractSiteModel.prototype._onFetchDataSuccess = function(data) {};
 
-    AbstractSiteModel.prototype._onFetchFailure = function() {};
+    AbstractSiteModel.prototype._onFetchDataFailure = function() {};
 
     return AbstractSiteModel;
 

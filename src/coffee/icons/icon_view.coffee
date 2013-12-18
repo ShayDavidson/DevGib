@@ -5,8 +5,9 @@ class DevGib.Icons.IconView
   @SPINNER_CLASS: 'spinner'
   @ERROR_CLASS: 'error'
 
-  DEVGIB_SCORE_ICON_CLASS: 'devgib-score-icon'
-  DEVGIB_SCORE_CLASS_PREFIX: 'score'
+  @DEVGIB_ICON_SPACE_CLASS: 'devgib-icon-space'
+  @DEVGIB_SCORE_ICON_CLASS: 'devgib-score-icon'
+  @DEVGIB_SCORE_CLASS_PREFIX: 'score'
 
   anchorEl: null
   spanEl: null
@@ -14,11 +15,12 @@ class DevGib.Icons.IconView
 
   constructor: (@anchorEl, @siteModel) ->
     @spanEl = $("<span></span>")
-    @spanEl.addClass(@DEVGIB_SCORE_ICON_CLASS)
+    @spanEl.addClass(@constructor.DEVGIB_SCORE_ICON_CLASS)
     @spanEl.addClass(@siteModel.key)
     @spanEl.attr('title', "Loading DevGib score from #{@siteModel.key}")
 
   attach: ->
+    @anchorEl.prepend($("<span class=#{@constructor.DEVGIB_ICON_SPACE_CLASS}>&nbsp;</span>"))
     @anchorEl.prepend(@spanEl)
 
   showSpinner: ->
@@ -32,12 +34,12 @@ class DevGib.Icons.IconView
 
   showScore: (score) ->
     @spanEl.removeClass(@constructor.SPINNER_CLASS)
-    @spanEl.addClass("#{@DEVGIB_SCORE_CLASS_PREFIX}-#{score}")
+    @spanEl.addClass("#{@constructor.DEVGIB_SCORE_CLASS_PREFIX}-#{score}")
     @spanEl.attr('title', "DevGib #{@siteModel.key} score is #{score}")
     @_showIcon(@siteModel.icon)
 
   _showIcon: (icon) ->
-    @spanEl.html("#{icon}&nbsp;")
+    @spanEl.html(icon)
 
 
 

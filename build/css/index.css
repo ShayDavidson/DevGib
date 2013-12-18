@@ -15,10 +15,11 @@
 .devgib-score-icon {
   font-family: 'FontAwesome';
   font-weight: normal;
+  display: inline-block;
   -webkit-font-smoothing: antialiased; }
   .devgib-score-icon.spinner {
     color: #a3a3a3;
-    -webkit-animation: spin 2s infinite linear; }
+    -webkit-animation: spin 1s infinite linear; }
   .devgib-score-icon.error {
     color: #a3a3a3; }
   .devgib-score-icon.score-1 {
