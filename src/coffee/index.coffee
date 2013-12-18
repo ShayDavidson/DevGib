@@ -12,7 +12,7 @@ class DevGib.Extension
         return unless url
         sanitizedURL = @_sanitizedURL(url)
 
-        if site = _.find(sites, (site) -> site.isURLMatching(sanitizedURL))
+        if site = _.find(sites, (site) -> site.isURLMatching(sanitizedURL) && !site.isAnchorBlackListed(anchor))
           icon = new DevGib.Icons.IconController(anchor, sanitizedURL, site)
           icon.show()
       )

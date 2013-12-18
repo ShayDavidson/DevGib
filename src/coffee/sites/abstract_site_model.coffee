@@ -5,6 +5,7 @@ class DevGib.Sites.AbstractSiteModel
   key: null
   icon: null
   matchingURLRegex: null
+  anchorClassBlackList: null
   resourceIDRegex: null
 
   fetchScoreForURL: (url, success, failure) ->
@@ -19,6 +20,9 @@ class DevGib.Sites.AbstractSiteModel
     noHashInURL  = url.indexOf('#') == -1
 
     matchingURL && noQueryInURL && noHashInURL
+
+  isAnchorBlackListed: (anchor) ->
+    _.find(@anchorClassBlackList, (blackListedClass) -> anchor.hasClass(blackListedClass))
 
   getResourceIDFromURL: (url) ->
     url.match(@resourceIDRegex)

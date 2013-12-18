@@ -3,6 +3,7 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
   key: 'stackoverflow'
   icon: '&#xf16c;'
   matchingURLRegex: /^http:\/\/stackoverflow.com\/questions\/\d+/
+  anchorBlackList: []
   resourceIDRegex: /\d+/
   apiURL: 'https://api.stackexchange.com/2.1/questions/%s/answers?site=stackoverflow&order=desc&sort=activity&filter=default'
 

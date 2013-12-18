@@ -5,7 +5,6 @@
 __Icons__
 
 * Added a default span to the icons so the links don't change places after the icon is loaded from spinner.
-* Allow to add a black list of elements which should not get an icon (e.g. Github code icon).
 
 __Extension__
 
