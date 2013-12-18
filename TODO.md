@@ -4,6 +4,7 @@
 
 __Icons__
 
+* String interpolation for strings in IconView.
 * Allow to add a black list of elements which should not get an icon (e.g. Github code icon).
 
 __Extension__
