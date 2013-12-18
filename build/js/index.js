@@ -54,9 +54,6 @@
 
   })();
 
-  /* Running*/
-
-
   run = function() {
     return DevGib.Extension.sharedInstance().run();
   };

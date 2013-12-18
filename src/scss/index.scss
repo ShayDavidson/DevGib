@@ -11,23 +11,23 @@
   -webkit-font-smoothing: antialiased;
 
 
-  &.spinner {
+  &.devgib-spinner {
     color: $without-score-color;
     -webkit-animation: spin 1s infinite linear;
   }
 
-  &.error {
+  &.devgib-error {
     color: $without-score-color;
   }
 
-  &.score-1  { color: #9a0200; }
-  &.score-2  { color: #af460a; }
-  &.score-3  { color: #a78400; }
-  &.score-4  { color: #c6b600; }
-  &.score-5  { color: #d9dd06; }
-  &.score-6  { color: #acda10; }
-  &.score-7  { color: #68c130; }
-  &.score-8  { color: #57e826; }
-  &.score-9  { color: #3595ff; }
-  &.score-10 { color: #145bc1; }
+  &.devgib-score-1  { color: #9a0200; }
+  &.devgib-score-2  { color: #af460a; }
+  &.devgib-score-3  { color: #a78400; }
+  &.devgib-score-4  { color: #c6b600; }
+  &.devgib-score-5  { color: #d9dd06; }
+  &.devgib-score-6  { color: #acda10; }
+  &.devgib-score-7  { color: #68c130; }
+  &.devgib-score-8  { color: #57e826; }
+  &.devgib-score-9  { color: #3595ff; }
+  &.devgib-score-10 { color: #145bc1; }
 }

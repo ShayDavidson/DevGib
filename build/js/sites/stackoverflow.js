@@ -15,7 +15,9 @@
 
     Stackoverflow.prototype.icon = '&#xf16c;';
 
-    Stackoverflow.prototype.matchingRegex = /^http:\/\/stackoverflow.com\/questions\/\d+/;
+    Stackoverflow.prototype.matchingURLRegex = /^http:\/\/stackoverflow.com\/questions\/\d+/;
+
+    Stackoverflow.prototype.resourceIDRegex = /\d+/;
 
     return Stackoverflow;
 

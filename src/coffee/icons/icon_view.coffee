@@ -2,12 +2,13 @@ class DevGib.Icons.IconView
 
   @SPINNER_ICON: '&#xf110;'
   @ERROR_ICON: '&#xf11a;'
-  @SPINNER_CLASS: 'spinner'
-  @ERROR_CLASS: 'error'
+
+  @SPINNER_CLASS: 'devgib-spinner'
+  @ERROR_CLASS: 'devgib-error'
 
   @DEVGIB_ICON_SPACE_CLASS: 'devgib-icon-space'
   @DEVGIB_SCORE_ICON_CLASS: 'devgib-score-icon'
-  @DEVGIB_SCORE_CLASS_PREFIX: 'score'
+  @DEVGIB_SCORE_CLASS_PREFIX: 'devgib-score'
 
   anchorEl: null
   spanEl: null

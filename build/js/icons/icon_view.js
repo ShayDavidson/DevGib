@@ -4,15 +4,15 @@
 
     IconView.ERROR_ICON = '&#xf11a;';
 
-    IconView.SPINNER_CLASS = 'spinner';
+    IconView.SPINNER_CLASS = 'devgib-spinner';
 
-    IconView.ERROR_CLASS = 'error';
+    IconView.ERROR_CLASS = 'devgib-error';
 
     IconView.DEVGIB_ICON_SPACE_CLASS = 'devgib-icon-space';
 
     IconView.DEVGIB_SCORE_ICON_CLASS = 'devgib-score-icon';
 
-    IconView.DEVGIB_SCORE_CLASS_PREFIX = 'score';
+    IconView.DEVGIB_SCORE_CLASS_PREFIX = 'devgib-score';
 
     IconView.prototype.anchorEl = null;
 

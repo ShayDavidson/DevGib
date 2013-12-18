@@ -37,7 +37,7 @@ class DevGib.Extension
       return @_instance
 
 
-### Running ########################################################
+
 
 run = -> DevGib.Extension.sharedInstance().run()
 runNodeInserted = ->
@@ -47,5 +47,3 @@ runNodeInserted = ->
 
 $(document).ready run
 $(document).bind 'DOMNodeInserted', runNodeInserted
-
-####################################################################

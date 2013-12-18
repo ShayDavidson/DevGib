@@ -26,6 +26,7 @@
 
             "lib/js/jquery-2.0.3.min.js",
             "lib/js/underscore-1.5.2.min.js",
+            "lib/js/underscore.string-2.3.0.min.js",
 
             // extension
 
