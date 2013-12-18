@@ -1,6 +1,0 @@
-@font-face {
-  font-family: 'FontAwesome';
-  font-weight: normal;
-  font-style: normal;
-  src: url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.eot");
-  src: url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.eot") format("embedded-opentype"), url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.woff") format("woff"), url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.ttf") format("truetype"), url("chrome-extension://__MSG_@@extension_id__/assets/fonts/fontawesome-webfont.svg") format("svg"); }
