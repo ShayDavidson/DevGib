@@ -25,10 +25,6 @@
       }), Math.floor(Math.random() * 2000 + 500));
     };
 
-    AbstractSiteModel.prototype._onFetchDataSuccess = function(data) {};
-
-    AbstractSiteModel.prototype._onFetchDataFailure = function() {};
-
     return AbstractSiteModel;
 
   })();

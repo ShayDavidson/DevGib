@@ -9,7 +9,7 @@
         "128": "assets/icons/icon128.png" },
     "background": {
         "scripts": [
-            "build/js/background.js"
+            "build/js/background/events.js"
         ],
 	    "persistent": false
     },
