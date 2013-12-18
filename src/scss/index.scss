@@ -3,19 +3,26 @@
 
 .devgib-score-icon {
 
+  $without-score-color: #a3a3a3;
+
   font-family: 'FontAwesome';
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
 
-  &.spinning {
+  &.spinner {
+    color: $without-score-color;
     -webkit-animation: spin 2s infinite linear;
   }
 
-  &.score-1  { color: #ff0300; }
-  &.score-2  { color: #e65401; }
-  &.score-3  { color: #cda200; }
+  &.error {
+    color: $without-score-color;
+  }
+
+  &.score-1  { color: #9a0200; }
+  &.score-2  { color: #af460a; }
+  &.score-3  { color: #a78400; }
   &.score-4  { color: #c6b600; }
-  &.score-5  { color: #c8cc06; }
+  &.score-5  { color: #d9dd06; }
   &.score-6  { color: #acda10; }
   &.score-7  { color: #68c130; }
   &.score-8  { color: #57e826; }

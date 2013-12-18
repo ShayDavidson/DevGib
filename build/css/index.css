@@ -16,18 +16,21 @@
   font-family: 'FontAwesome';
   font-weight: normal;
   -webkit-font-smoothing: antialiased; }
-  .devgib-score-icon.spinning {
+  .devgib-score-icon.spinner {
+    color: #a3a3a3;
     -webkit-animation: spin 2s infinite linear; }
+  .devgib-score-icon.error {
+    color: #a3a3a3; }
   .devgib-score-icon.score-1 {
-    color: #ff0300; }
+    color: #9a0200; }
   .devgib-score-icon.score-2 {
-    color: #e65401; }
+    color: #af460a; }
   .devgib-score-icon.score-3 {
-    color: #cda200; }
+    color: #a78400; }
   .devgib-score-icon.score-4 {
     color: #c6b600; }
   .devgib-score-icon.score-5 {
-    color: #c8cc06; }
+    color: #d9dd06; }
   .devgib-score-icon.score-6 {
     color: #acda10; }
   .devgib-score-icon.score-7 {

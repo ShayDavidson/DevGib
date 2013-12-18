@@ -1,8 +1,9 @@
 class DevGib.Icons.IconView
 
   @SPINNER_ICON: '&#xf110;'
-  @PADDING_CHAR: '&nbsp;'
-  @SPINNING_CLASS: 'spinning'
+  @ERROR_ICON: '&#xf11a;'
+  @SPINNER_CLASS: 'spinner'
+  @ERROR_CLASS: 'error'
 
   DEVGIB_SCORE_ICON_CLASS: 'devgib-score-icon'
   DEVGIB_SCORE_CLASS_PREFIX: 'score'
@@ -21,14 +22,22 @@ class DevGib.Icons.IconView
     @anchorEl.prepend(@spanEl)
 
   showSpinner: ->
-    @spanEl.addClass(@constructor.SPINNING_CLASS)
-    @spanEl.html("#{@constructor.SPINNER_ICON}#{@constructor.PADDING_CHAR}")
+    @spanEl.addClass(@constructor.SPINNER_CLASS)
+    @_showIcon(@constructor.SPINNER_ICON)
+
+  showError: ->
+    @spanEl.removeClass(@constructor.SPINNER_CLASS)
+    @spanEl.addClass(@constructor.ERROR_CLASS)
+    @_showIcon(@constructor.ERROR_ICON)
 
   showScore: (score) ->
-    @spanEl.removeClass(@constructor.SPINNING_CLASS)
+    @spanEl.removeClass(@constructor.SPINNER_CLASS)
     @spanEl.addClass("#{@DEVGIB_SCORE_CLASS_PREFIX}-#{score}")
-    @spanEl.html("#{@siteModel.icon}#{@constructor.PADDING_CHAR}")
     @spanEl.attr('title', "DevGib #{@siteModel.key} score is #{score}")
+    @_showIcon(@siteModel.icon)
+
+  _showIcon: (icon) ->
+    @spanEl.html("#{icon}&nbsp;")
 
 
 

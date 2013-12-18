@@ -13,6 +13,13 @@ class DevGib.Sites.AbstractSiteModel
 
     matchingURL && noQueryInURL && noHashInURL
 
-  fetchScore: -> # override by subclass.
+  fetchScoreForURL: (url, success, failure) -> # override by subclass.
+
+  _onFetchSuccess: (data) -> # override by subclass.
+
+  _onFetchFailure: ->
+
+
+
 
 

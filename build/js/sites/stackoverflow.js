@@ -17,6 +17,8 @@
 
     Stackoverflow.prototype.matchingRegex = /^http:\/\/stackoverflow.com\/questions\/\d+/;
 
+    Stackoverflow.prototype.fetchScoreForURL = function(url) {};
+
     return Stackoverflow;
 
   })(DevGib.Sites.AbstractSiteModel);

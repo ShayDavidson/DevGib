@@ -2,6 +2,10 @@
 
 ### FEATURES ###
 
+__Icons__
+
+* Allow to add a black list of elements which should not get an icon (e.g. Github code icon).
+
 __Extension__
 
 * Allow to enable/disable sites from the extension.
@@ -16,7 +20,6 @@ __Scoring__
 
 ### REFACTOR ###
 
-* Consider handing the icons an instance of a site each instead of each having the singleton, and save the url for each model.
 * Use mutation observers instead of dom events and improve performance for anchor searching.
 * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
 

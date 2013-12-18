@@ -14,7 +14,16 @@
 
     IconController.prototype.show = function() {
       this.iconView.attach();
-      return this.iconView.showSpinner();
+      this.iconView.showSpinner();
+      return this.siteModel.fetchScoreForURL(this.url, this._onFetchScoreSuccess, this._onFetchScoreFailure);
+    };
+
+    IconController.prototype._onFetchScoreSuccess = function(score) {
+      return this.iconView.showScore(score);
+    };
+
+    IconController.prototype._onFetchScoreFailure = function() {
+      return this.iconView.showError();
     };
 
     return IconController;

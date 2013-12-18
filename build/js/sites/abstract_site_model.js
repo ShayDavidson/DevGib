@@ -19,7 +19,11 @@
       return matchingURL && noQueryInURL && noHashInURL;
     };
 
-    AbstractSiteModel.prototype.fetchScore = function() {};
+    AbstractSiteModel.prototype.fetchScoreForURL = function(url, success, failure) {};
+
+    AbstractSiteModel.prototype._onFetchSuccess = function(data) {};
+
+    AbstractSiteModel.prototype._onFetchFailure = function() {};
 
     return AbstractSiteModel;
 

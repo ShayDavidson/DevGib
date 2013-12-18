@@ -2,9 +2,11 @@
   DevGib.Icons.IconView = (function() {
     IconView.SPINNER_ICON = '&#xf110;';
 
-    IconView.PADDING_CHAR = '&nbsp;';
+    IconView.ERROR_ICON = '&#xf11a;';
 
-    IconView.SPINNING_CLASS = 'spinning';
+    IconView.SPINNER_CLASS = 'spinner';
+
+    IconView.ERROR_CLASS = 'error';
 
     IconView.prototype.DEVGIB_SCORE_ICON_CLASS = 'devgib-score-icon';
 
@@ -30,15 +32,25 @@
     };
 
     IconView.prototype.showSpinner = function() {
-      this.spanEl.addClass(this.constructor.SPINNING_CLASS);
-      return this.spanEl.html("" + this.constructor.SPINNER_ICON + this.constructor.PADDING_CHAR);
+      this.spanEl.addClass(this.constructor.SPINNER_CLASS);
+      return this._showIcon(this.constructor.SPINNER_ICON);
+    };
+
+    IconView.prototype.showError = function() {
+      this.spanEl.removeClass(this.constructor.SPINNER_CLASS);
+      this.spanEl.addClass(this.constructor.ERROR_CLASS);
+      return this._showIcon(this.constructor.ERROR_ICON);
     };
 
     IconView.prototype.showScore = function(score) {
-      this.spanEl.removeClass(this.constructor.SPINNING_CLASS);
+      this.spanEl.removeClass(this.constructor.SPINNER_CLASS);
       this.spanEl.addClass("" + this.DEVGIB_SCORE_CLASS_PREFIX + "-" + score);
-      this.spanEl.html("" + this.siteModel.icon + this.constructor.PADDING_CHAR);
-      return this.spanEl.attr('title', "DevGib " + this.siteModel.key + " score is " + score);
+      this.spanEl.attr('title', "DevGib " + this.siteModel.key + " score is " + score);
+      return this._showIcon(this.siteModel.icon);
+    };
+
+    IconView.prototype._showIcon = function(icon) {
+      return this.spanEl.html("" + icon + "&nbsp;");
     };
 
     return IconView;
