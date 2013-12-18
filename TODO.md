@@ -5,6 +5,7 @@
 __Icons__
 
 * String interpolation for strings in IconView.
+* Added a default span to the icons so the links don't change places after the icon is loaded from spinner.
 * Allow to add a black list of elements which should not get an icon (e.g. Github code icon).
 
 __Extension__
@@ -19,8 +20,11 @@ __Scoring__
 * Add spinner as site score is loaded.
 
 
+
+
 ### REFACTOR ###
 
+* Order the classes with separators to separate must-be-implemented stuff and internals.
 * Use mutation observers instead of dom events and improve performance for anchor searching.
 * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
 
