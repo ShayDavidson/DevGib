@@ -29,7 +29,6 @@ __Scoring__
 
 ### BUILD ###
 
-* Consider removing 'build' folder from repo.
 * Add grunt-chrome-package.
 * Add grunt min/contact for js.
 
