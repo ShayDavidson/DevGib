@@ -4,7 +4,6 @@
 
 __Icons__
 
-* String interpolation for strings in IconView.
 * Added a default span to the icons so the links don't change places after the icon is loaded from spinner.
 * Allow to add a black list of elements which should not get an icon (e.g. Github code icon).
 
@@ -17,9 +16,8 @@ __Scoring__
 
 * Add site score for Github.
 * Add site score for StackOverflow.
-* Add spinner as site score is loaded.
-
-
+* Caching.
+* Throttling.
 
 
 ### REFACTOR ###

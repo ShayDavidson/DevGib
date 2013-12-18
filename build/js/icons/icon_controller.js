@@ -15,8 +15,7 @@
 
     IconController.prototype.show = function() {
       this.iconView.attach();
-      this.iconView.showSpinner();
-      return this.siteModel.fetchScoreForURL(this.url, this._onFetchScoreSuccess, this._onFetchScoreFailure);
+      return this.iconView.showSpinner();
     };
 
     IconController.prototype._onFetchScoreSuccess = function(score) {
