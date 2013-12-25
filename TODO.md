@@ -1,31 +1,18 @@
 # TODO #
 
-### FEATURES ###
-
-__Icons__
-
-* Added a default span to the icons so the links don't change places after the icon is loaded from spinner.
-
-__Extension__
-
-* Allow to enable/disable sites from the extension.
-* Add icon for disable/enable.
-
-__Scoring__
-
-* Add site score for Github.
-* Caching.
-
-### REFACTOR ###
+### BACKLOG ###
 
 * Order the classes with separators to separate must-be-implemented stuff and internals.
-* Use mutation observers instead of dom events and improve performance for anchor searching.
+* Caching per URL.
 * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
-
-### BUILD ###
-
+* Allow to enable/disable sites from the extension.
+* Allow to disable completely.
+* Added a default span to the icons so the links don't change places after the icon is loaded from spinner.
 * Add grunt-chrome-package.
 * Add grunt min/contact for js.
 
+### ICEBOX ###
 
+* Add site score for Github.
+* Use mutation observers instead of dom events and improve performance for anchor searching.
 
