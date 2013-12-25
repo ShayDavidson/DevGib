@@ -17,7 +17,7 @@ class DevGib.Sites.AbstractSiteModel
   #### Abstract ########################################################
 
   constructor: ->
-    @throttleService = new DevGib.ThrottleService(@requestsPerSecond)
+    @fetchScoreForURL = _.rateLimit(@fetchScoreForURL, 100)
 
   isURLMatching: (url) ->
     return false unless url
@@ -35,11 +35,9 @@ class DevGib.Sites.AbstractSiteModel
     resourceID = @_getResourceIDFromURL(url)
     requestURL = _.string.sprintf(@apiURL, resourceID)
 
-    @throttleService.throttleRequest( =>
-      @promiseForScoreRequest(requestURL)
-        .done((data) => success(@getScoreFromAnswersData(data)))
-        .fail(failure)
-    )
+    @promiseForScoreRequest(requestURL)
+      .done((data) => success(@calculateScoreFromResponseData(data)))
+      .fail(failure)
 
   _getResourceIDFromURL: (url) ->
     url.match(@resourceIDRegex)

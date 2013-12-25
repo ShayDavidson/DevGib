@@ -1,7 +1,7 @@
 class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
 
   key: 'stackoverflow'
-  icon: '&#xf16c;'
+  icon: '&#xf18d;'
   matchingURLRegex: /^http:\/\/stackoverflow.com\/questions\/\d+/
   anchorBlackList: []
   resourceIDRegex: /\d+/

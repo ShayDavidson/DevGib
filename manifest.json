@@ -27,13 +27,13 @@
             "lib/js/jquery-2.0.3.min.js",
             "lib/js/underscore-1.5.2.min.js",
             "lib/js/underscore.string-2.3.0.min.js",
+            "lib/js/underscore.ratelimit.js",
 
             // extension
 
             "build/js/namespaces.js",
             "build/js/index.js",
             "build/js/services/cache_service.js",
-            "build/js/services/throttle_service.js",
             "build/js/icons/icon_controller.js",
             "build/js/icons/icon_view.js",
             "build/js/sites/abstract_site_model.js",
