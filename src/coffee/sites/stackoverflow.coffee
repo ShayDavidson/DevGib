@@ -10,11 +10,11 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
   fetchScoreForURL: (url, success, failure) -> # override by subclass.
     resourceID = @getResourceIDFromURL(url)
     requestURL = _.string.sprintf(@apiURL, resourceID)
-    $.get(requestURL)
-      .done((data) =>
-        success(@_getScoreFromAnswersData(data))
-      )
-      .fail(failure)
+#    $.get(requestURL)
+#      .done((data) =>
+#        success(@_getScoreFromAnswersData(data))
+#      )
+#      .fail(failure)
 
   #### Heuristics ######################################################
 

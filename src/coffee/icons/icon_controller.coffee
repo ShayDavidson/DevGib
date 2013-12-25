@@ -10,8 +10,13 @@ class DevGib.Icons.IconController
 
   show: ->
     @iconView.attach()
-    @iconView.showSpinner()
-#    @siteModel.fetchScoreForURL(@url, @_onFetchScoreSuccess, @_onFetchScoreFailure)
+
+    cachedScore = DevGib.Cache.cachedScoreForURL(@url)
+    if cachedScore == DevGib.Cache.NOT_CACHED
+      @iconView.showSpinner()
+      @siteModel.fetchScoreForURL(@url, @_onFetchScoreSuccess, @_onFetchScoreFailure)
+    else
+      @iconView.showScore(cachedScore)
 
   _onFetchScoreSuccess: (score) ->
     @iconView.showScore(score)

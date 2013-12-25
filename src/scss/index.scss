@@ -1,6 +1,10 @@
 @import 'fonts';
 @import 'animations';
 
+.devgib-icon-wrapper {
+  display: inline-block;
+}
+
 .devgib-score-icon {
 
   $without-score-color: #a3a3a3;

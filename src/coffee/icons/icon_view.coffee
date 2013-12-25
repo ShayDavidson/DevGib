@@ -8,6 +8,7 @@ class DevGib.Icons.IconView
   @SPINNER_CLASS: 'devgib-spinner'
   @ERROR_CLASS:   'devgib-error'
 
+  @WRAPPER_CLASS:      'devgib-icon-wrapper'
   @ICON_SPACE_CLASS:   'devgib-icon-space'
   @SCORE_ICON_CLASS:   'devgib-score-icon'
   @SCORE_CLASS_PREFIX: 'devgib-score'
@@ -28,8 +29,15 @@ class DevGib.Icons.IconView
     @spanEl.addClass(@siteModel.key)
 
   attach: ->
-    @anchorEl.prepend($("<span class=#{@constructor.ICON_SPACE_CLASS}>&nbsp;</span>"))
-    @anchorEl.prepend(@spanEl)
+    spaceEl = $("<span>&nbsp;</span>")
+    spaceEl.addClass(@constructor.ICON_SPACE_CLASS)
+
+    wrappingEl = $("<span></span>")
+    wrappingEl.addClass(@constructor.WRAPPER_CLASS)
+    wrappingEl.prepend(spaceEl)
+    wrappingEl.prepend(@spanEl)
+
+    @anchorEl.prepend(wrappingEl)
 
   showSpinner: ->
     @spanEl.addClass(@constructor.SPINNER_CLASS)
