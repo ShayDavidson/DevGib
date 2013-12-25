@@ -1,5 +1,7 @@
 class DevGib.Icons.IconController
 
+  @MAX_SCORE: 10
+
   siteModel: null
   iconView: null
   url: null
@@ -16,10 +18,13 @@ class DevGib.Icons.IconController
       @iconView.showSpinner()
       @siteModel.fetchScoreForURL(@url, @_onFetchScoreSuccess, @_onFetchScoreFailure)
     else
-      @iconView.showScore(cachedScore)
+      @iconView.showScore(@_sanitizedScore(cachedScore))
 
   _onFetchScoreSuccess: (score) ->
-    @iconView.showScore(score)
+    @iconView.showScore(@_sanitizedScore(score))
 
   _onFetchScoreFailure: ->
     @iconView.showError()
+
+  _sanitizedScore: (score) ->
+    Math.round(Math.min(@constructor.MAX_SCORE, score))

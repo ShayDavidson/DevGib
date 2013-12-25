@@ -8,6 +8,9 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
   apiURL: 'https://api.stackexchange.com/2.1/questions/%s/answers?site=stackoverflow&order=desc&sort=activity&filter=default'
   requestsPerSecond: 5
 
+  @BASE_SCORE: 0
+  @ANSWER_BONUS: 4
+
   promiseForScoreRequest: (requestURL) -> # override by subclass.
     $.get(requestURL)
 
@@ -17,9 +20,9 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
     accumulatedScore = _.reduce(allAnswers, ((sum, answer) -> sum + answer['score']), 0)
     sanitiziedScore = Math.max(accumulatedScore, 0)
 
-    startingScore = 10
-    startingScore -= 4 unless acceptedAnswer
-    startingScore += Math.log(sanitiziedScore)
+    startingScore = @constructor.BASE_SCORE
+    startingScore += @constructor.ANSWER_BONUS if acceptedAnswer
+    startingScore += Math.log(sanitiziedScore) if sanitiziedScore > 0
 
     startingScore
 
