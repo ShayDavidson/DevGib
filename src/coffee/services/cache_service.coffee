@@ -1,4 +1,4 @@
-class DevGib.Cache
+class DevGib.CacheService
 
   @NOT_CACHED: -1
 

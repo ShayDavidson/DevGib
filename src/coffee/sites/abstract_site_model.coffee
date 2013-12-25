@@ -7,10 +7,17 @@ class DevGib.Sites.AbstractSiteModel
   matchingURLRegex: null
   anchorClassBlackList: null
   resourceIDRegex: null
+  apiURL: null
+  requestsPerSecond: null
 
-  fetchScoreForURL: (url, success, failure) ->
+  promiseForScoreRequest: (requestURL, success, failure) ->
+
+  calculateScoreFromResponseData: (data) ->
 
   #### Abstract ########################################################
+
+  constructor: ->
+    @throttleService = new DevGib.ThrottleService(@requestsPerSecond)
 
   isURLMatching: (url) ->
     return false unless url
@@ -24,5 +31,15 @@ class DevGib.Sites.AbstractSiteModel
   isAnchorBlackListed: (anchor) ->
     _.find(@anchorClassBlackList, (blackListedClass) -> anchor.hasClass(blackListedClass))
 
-  getResourceIDFromURL: (url) ->
+  fetchScoreForURL: (url, success, failure) ->
+    resourceID = @_getResourceIDFromURL(url)
+    requestURL = _.string.sprintf(@apiURL, resourceID)
+
+    @throttleService.throttleRequest( =>
+      @promiseForScoreRequest(requestURL)
+        .done((data) => success(@getScoreFromAnswersData(data)))
+        .fail(failure)
+    )
+
+  _getResourceIDFromURL: (url) ->
     url.match(@resourceIDRegex)

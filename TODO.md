@@ -14,17 +14,13 @@ __Extension__
 __Scoring__
 
 * Add site score for Github.
-* Add site score for StackOverflow.
 * Caching.
-* Throttling.
-
 
 ### REFACTOR ###
 
 * Order the classes with separators to separate must-be-implemented stuff and internals.
 * Use mutation observers instead of dom events and improve performance for anchor searching.
 * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
-
 
 ### BUILD ###
 
