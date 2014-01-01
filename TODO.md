@@ -1,9 +1,6 @@
 # TODO #
 
-### BACKLOG ###
-
 * Order the classes with separators to separate must-be-implemented stuff and internals.
-* Caching per URL.
 * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
 * Allow to enable/disable sites from the extension.
 * Allow to disable completely.
