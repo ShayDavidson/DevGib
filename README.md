@@ -15,13 +15,9 @@ __Stackoverflow__ questions are scored according to this formula:
 
 ```
     2
-
     +
-
     ln( <accumulated score of all answers> )
-
     +
-
     4 points if the question has an accepted answer
 ```
 
