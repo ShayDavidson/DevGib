@@ -14,11 +14,19 @@ Every analyzed anchor in a web page receives a score value between 0 and 10.
 __Stackoverflow__ questions are scored according to this formula:
 
 ```
-    2
+    2 as base score
     +
     ln( <accumulated score of all answers> )
     +
     4 points if the question has an accepted answer
+```
+
+## Github ##
+
+__Github__ repos are scored according to this formula:
+
+```
+    NOT YET IMPLEMENTED
 ```
 
 # Developers
