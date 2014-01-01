@@ -12,7 +12,6 @@ class DevGib.CacheService
       else
         callback(val[url][@SCORE_KEY]))
 
-
   @cacheScoreForURL: (url, score) ->
     cachedResult = {}
     cachedResult[url] = @_buildCachedResult(score)
