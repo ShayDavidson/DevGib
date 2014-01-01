@@ -5,6 +5,35 @@ DevGib
 
 A Chrome extensions that analyzes the quality of dev-related links (e.g.: Github repositories, StackOverflow questions) before accessing them.
 
+# How does it work #
+
+Every analyzed anchor in a web page receives a score value between 0 and 10.
+
+## Stackoverflow ##
+
+__Stackoverflow__ questions are scored according to this formula:
+
+```
+    ACCUMULATED: <accumulated score of all answers>
+
+    SCORE: 2 + ln( min( ACCUMULATED , 10 ) )
+
+    If the question has an accepted answer, SCORE receives a 4 points bonus.
+```
+     allAnswers = data['items']
+        acceptedAnswer = _.find(allAnswers, (answer) -> answer['is_accepted'])
+        accumulatedScore = _.reduce(allAnswers, ((sum, answer) -> sum + answer['score']), 0)
+        sanitiziedScore = Math.max(accumulatedScore, 0)
+
+        startingScore = @constructor.BASE_SCORE
+        startingScore += @constructor.ANSWER_BONUS if acceptedAnswer
+        startingScore += Math.log(sanitiziedScore) if sanitiziedScore > 0
+
+        startingScore
+
+
+# Developers
+
 ## Grunt ##
 
 DevGib uses grunt for building the extension. In order to use Grunt you need to:

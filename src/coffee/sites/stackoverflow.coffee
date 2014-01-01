@@ -6,7 +6,7 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
   anchorBlackList: []
   resourceIDRegex: /\d+/
   apiURL: 'https://api.stackexchange.com/2.1/questions/%s/answers?site=stackoverflow&order=desc&sort=activity&filter=default'
-  requestsPerSecond: 5
+  requestsPerSecond: 4
 
   @BASE_SCORE: 2
   @ANSWER_BONUS: 5
