@@ -8,18 +8,20 @@ class DevGib.Icons.IconController
 
   constructor: (anchorEl, @url, @siteModel) ->
     @iconView = new DevGib.Icons.IconView(anchorEl, siteModel)
-    _.bindAll(@, '_onFetchScoreSuccess', '_onFetchScoreFailure', '_onCacheResponse')
+    _.bindAll(@, '_onFetchScoreSuccess', '_onFetchScoreFailure', '_showScore', '_fetchScore')
 
   show: ->
     @iconView.attach()
     @iconView.showSpinner()
-    DevGib.CacheService.getCachedScoreForURL(@url, @_onCacheResponse)
+    DevGib.CacheService.getCachedScoreForURL(@url)
+      .done(@_showScore)
+      .fail(@_fetchScore)
 
-  _onCacheResponse: (cachedScore) ->
-    if cachedScore == DevGib.CacheService.NOT_CACHED
-      @siteModel.fetchScoreForURL(@url, @_onFetchScoreSuccess, @_onFetchScoreFailure)
-    else
-      @iconView.showScore(@_sanitizedScore(cachedScore))
+  _showScore: (score) ->
+    @iconView.showScore(@_sanitizedScore(score))
+
+  _fetchScore: ->
+    @siteModel.fetchScoreForURL(@url, @_onFetchScoreSuccess, @_onFetchScoreFailure)
 
   _onFetchScoreSuccess: (score) ->
     DevGib.CacheService.cacheScoreForURL(@url, score)

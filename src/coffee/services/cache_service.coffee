@@ -3,14 +3,16 @@ class DevGib.CacheService
   @EXPIRATION_PERIOD_IN_DAYS: 7
   @SCORE_KEY: 'score'
   @EXPIRATION_KEY: 'expiresIn'
-  @NOT_CACHED: -1
 
-  @getCachedScoreForURL: (url, callback) ->
+  @getCachedScoreForURL: (url) ->
+    deferred = $.Deferred()
     chrome.storage.local.get(url, (val) =>
       if _.isEmpty(val) || @_isCachedResultExpired(val)
-        callback(@NOT_CACHED)
+        deferred.reject()
       else
-        callback(val[url][@SCORE_KEY]))
+        deferred.resolve(val[url][@SCORE_KEY])
+    )
+    deferred.promise()
 
   @cacheScoreForURL: (url, score) ->
     cachedResult = {}
