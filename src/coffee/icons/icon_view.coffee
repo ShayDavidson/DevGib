@@ -38,23 +38,27 @@ class DevGib.Icons.IconView
     wrappingEl.prepend(@spanEl)
 
     @anchorEl.prepend(wrappingEl)
+    @
 
   showSpinner: ->
     @spanEl.addClass(@constructor.SPINNER_CLASS)
     @_showTitle(@constructor.SPINNER_TITLE, [@siteModel.key])
     @_showIcon(@constructor.SPINNER_ICON)
+    @
 
   showError: ->
     @spanEl.removeClass(@constructor.SPINNER_CLASS)
     @spanEl.addClass(@constructor.ERROR_CLASS)
     @_showTitle(@constructor.ERROR_TITLE)
     @_showIcon(@constructor.ERROR_ICON)
+    @
 
   showScore: (score) ->
     @spanEl.removeClass(@constructor.SPINNER_CLASS)
     @spanEl.addClass("#{@constructor.SCORE_CLASS_PREFIX}-#{score}")
     @_showTitle(@constructor.SCORE_TITLE, [@siteModel.key, score])
     @_showIcon(@siteModel.icon)
+    @
 
   _showTitle: (text, args = []) ->
     args.unshift(text)

@@ -4,8 +4,6 @@ class DevGib.Sites.Github extends DevGib.Sites.AbstractSiteModel
   icon: '&#xf113;'
   matchingURLRegex: /^https:\/\/github.com\/((?!settings|account|explore|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/
   anchorClassBlackList: ['sunken-menu-item']
-  resourceIDRegex: null
-  apiURL: null
-  requestsPerSecond: null
+  requestsPerSecond: 10
 
   fetchScoreForURL: (url, success, failure) ->
