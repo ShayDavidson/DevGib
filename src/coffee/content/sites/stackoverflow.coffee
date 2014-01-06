@@ -1,10 +1,12 @@
 class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
 
+  #### Site Model Interface #####################################################
+
   key: 'stackoverflow'
   icon: '&#xf18d;'
   matchingURLRegex: /^http:\/\/stackoverflow.com\/questions\/\d+/
-  anchorBlackList: []
-  requestsPerSecond: 10
+
+  #### Implementation ###########################################################
 
   resourceIDRegex: /\d+/
   apiURL: 'https://api.stackexchange.com/2.1/questions/%s/answers?site=stackoverflow&order=desc&sort=activity&filter=default'
@@ -34,8 +36,6 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
     startingScore += Math.log(sanitiziedScore) if sanitiziedScore > 0
 
     startingScore
-
-
 
   _getResourceIDFromURL: (url) ->
     url.match(@resourceIDRegex)

@@ -1,6 +1,6 @@
 class DevGib.Icons.IconView
 
-  #### Constants #######################################################
+  #### Constants ################################################################
 
   @SPINNER_ICON: '&#xf110;'
   @ERROR_ICON:   '&#xf11a;'
@@ -17,7 +17,7 @@ class DevGib.Icons.IconView
   @SCORE_TITLE:   "DevGib %s score is %s"
   @ERROR_TITLE:   "DevGib failed fetching the link's score"
 
-  #### Implementation ##################################################
+  #### Implementation ###########################################################
 
   anchorEl: null
   spanEl: null

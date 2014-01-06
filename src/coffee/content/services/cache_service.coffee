@@ -1,8 +1,12 @@
 class DevGib.CacheService
 
+  #### Constants ################################################################
+
   @EXPIRATION_PERIOD_IN_DAYS: 7
   @SCORE_KEY: 'score'
   @EXPIRATION_KEY: 'expiresIn'
+
+  #### Implementation ###########################################################
 
   @getCachedScoreForURL: (url) ->
     deferred = $.Deferred()

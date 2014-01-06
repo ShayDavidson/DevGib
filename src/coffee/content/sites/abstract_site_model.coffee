@@ -1,20 +1,33 @@
 class DevGib.Sites.AbstractSiteModel
 
-  @THROTTLE_LIMIT: 100
+  #### Interface ################################################################
 
-  #### Interface #######################################################
-
+  #
   key: null
+
+  #
   icon: null
+
+  #
   matchingURLRegex: null
-  anchorClassBlackList: null
-  requestsPerSecond: null
 
+  #
+  anchorClassBlackList: []
+
+  #
+  requestsPerSecond: 10
+
+  #
   fetchScoreForURL: (url) ->
+    throw 'Error: `fetchScoreForURL` method must be implemented.'
 
-  #### Abstract ########################################################
+  #### Common Implementation ####################################################
 
   constructor: ->
+    throw 'Error: `key` property must be set.'              unless @key
+    throw 'Error: `icon` property must be set.'             unless @icon
+    throw 'Error: `matchingURLRegex` property must be set.' unless @matchingURLRegex
+
     @fetchScoreForURL = _.rateLimit(@fetchScoreForURL, 1000 / @requestsPerSecond)
 
   isURLMatching: (url) ->

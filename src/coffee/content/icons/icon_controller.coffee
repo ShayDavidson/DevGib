@@ -1,6 +1,10 @@
 class DevGib.Icons.IconController
 
+  #### Constants ################################################################
+
   @MAX_SCORE: 10
+
+  #### Implementation ###########################################################
 
   siteModel: null
   iconView: null
