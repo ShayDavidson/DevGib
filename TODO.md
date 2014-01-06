@@ -1,8 +1,5 @@
 # TODO #
 
-0. Basic refactors:
- * Use promises for fetching score in stackoverflow.
-
 1. Added a popup on clicking the icon:
  * Popup has Don't show score icons (also hides all current anchors). If disabled, icon turns red.
  * Popup has Disable by site (appears with icon). Doesn't hide current anchors.

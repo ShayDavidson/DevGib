@@ -16,9 +16,7 @@ class DevGib.Icons.IconController
 
   show: ->
     @iconView.attach().showSpinner()
-    DevGib.CacheService.getCachedScoreForURL(@url)
-      .done(@_showScore)
-      .fail(@_fetchScore)
+    DevGib.CacheService.getCachedScoreForURL(@url, @_showScore, @_fetchScore)
 
   _showScore: (score) ->
     @iconView.showScore(@_sanitizedScore(score))

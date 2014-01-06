@@ -8,15 +8,13 @@ class DevGib.CacheService
 
   #### Implementation ###########################################################
 
-  @getCachedScoreForURL: (url) ->
-    deferred = $.Deferred()
+  @getCachedScoreForURL: (url, success, failure) ->
     chrome.storage.local.get(url, (val) =>
       if _.isEmpty(val) || @_isCachedResultExpired(val)
-        deferred.reject()
+        failure()
       else
-        deferred.resolve(val[url][@SCORE_KEY])
+        success(val[url][@SCORE_KEY])
     )
-    deferred.promise()
 
   @cacheScoreForURL: (url, score) ->
     cachedResult = {}

@@ -18,7 +18,7 @@ class DevGib.Sites.AbstractSiteModel
   requestsPerSecond: 10
 
   #
-  fetchScoreForURL: (url) ->
+  fetchScoreForURL: (url, success, failure) ->
     throw 'Error: `fetchScoreForURL` method must be implemented.'
 
   #### Common Implementation ####################################################

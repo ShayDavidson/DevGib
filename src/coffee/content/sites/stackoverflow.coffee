@@ -8,22 +8,19 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
 
   #### Implementation ###########################################################
 
-  resourceIDRegex: /\d+/
-  apiURL: 'https://api.stackexchange.com/2.1/questions/%s/answers?site=stackoverflow&order=desc&sort=activity&filter=default'
+  @RESOURCE_ID_REGEX: /\d+/
+  @API_URL: 'https://api.stackexchange.com/2.1/questions/%s/answers?site=stackoverflow&order=desc&sort=activity&filter=default'
 
   @BASE_SCORE: 2
   @ANSWER_BONUS: 5
 
   fetchScoreForURL: (url, success, failure) ->
     resourceID = @_getResourceIDFromURL(url)
-    requestURL = _.string.sprintf(@apiURL, resourceID)
+    requestURL = _.string.sprintf(@constructor.API_URL, resourceID)
 
-    @promiseForScoreRequest(requestURL)
-    .done((data) => success(@calculateScoreFromResponseData(data)))
-    .fail(failure)
-
-  promiseForScoreRequest: (requestURL) -> # override by subclass.
     $.get(requestURL)
+      .done((data) => success(@calculateScoreFromResponseData(data)))
+      .fail(failure)
 
   calculateScoreFromResponseData: (data) ->
     allAnswers = data['items']
@@ -38,4 +35,4 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
     startingScore
 
   _getResourceIDFromURL: (url) ->
-    url.match(@resourceIDRegex)
+    url.match(@constructor.RESOURCE_ID_REGEX)
