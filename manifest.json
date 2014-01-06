@@ -16,7 +16,7 @@
     "browser_action": {
         "default_title": "DevGib",
         "default_icon": "assets/icons/icon38.png",
-        "default_popup": "build/html/popup.html"
+        "default_popup": "build/html/background/popup.html"
     },
     "content_scripts": [{
         "matches": ["<all_urls>"],
@@ -32,20 +32,20 @@
 
             // extension
 
-            "build/js/namespaces.js",
-            "build/js/index.js",
-            "build/js/services/cache_service.js",
-            "build/js/icons/icon_controller.js",
-            "build/js/icons/icon_view.js",
-            "build/js/sites/abstract_site_model.js",
-            "build/js/sites/stackoverflow.js",
-            "build/js/sites/github.js"
+            "build/js/content/namespaces.js",
+            "build/js/content/index.js",
+            "build/js/content/services/cache_service.js",
+            "build/js/content/icons/icon_controller.js",
+            "build/js/content/icons/icon_view.js",
+            "build/js/content/sites/abstract_site_model.js",
+            "build/js/content/sites/stackoverflow.js",
+            "build/js/content/sites/github.js"
         ],
         "css": [
 
             // extension
 
-            "build/css/index.css"
+            "build/css/content/index.css"
         ]
     }],
     "web_accessible_resources": [
