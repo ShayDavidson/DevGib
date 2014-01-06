@@ -13,12 +13,14 @@ module.exports = (grunt) ->
         ]
 
     coffee:
-      glob_to_multiple:
-        expand: true
-        cwd: 'src/coffee'
-        src: '**/*.coffee'
-        dest: 'build/js'
-        ext: '.js'
+      dist:
+        files: [
+          expand: true
+          cwd: 'src/coffee'
+          src: '**/*.coffee'
+          dest: 'build/js'
+          ext: '.js'
+        ]
 
     haml:
       dist:
@@ -35,8 +37,11 @@ module.exports = (grunt) ->
         files: 'src/scss/**/*.scss'
         tasks: ['sass']
       coffee:
-        files: 'src/**/*.coffee'
+        files: 'src/coffee/**/*.coffee'
         tasks: ['coffee']
+      haml:
+        files: 'src/haml/**/*.haml'
+        tasks: ['haml']
   )
 
   grunt.loadNpmTasks('grunt-contrib-sass')
