@@ -10,7 +10,7 @@ class DevGib.CacheService
 
   @getCachedScoreForURL: (url, success, failure) ->
     chrome.storage.local.get(url, (val) =>
-      if _.isEmpty(val) || @_isCachedResultExpired(val)
+      if _.isEmpty(val) || @_isCachedResultExpired(val[url])
         failure()
       else
         success(val[url][@SCORE_KEY])
@@ -22,7 +22,7 @@ class DevGib.CacheService
     chrome.storage.local.set(cachedResult)
 
   @_expirationDateFromNow: ->
-    new Date().setDate(new Date().getDate() + @EXPIRATION_PERIOD_IN_DAYS)
+    new Date().getTime() + (@EXPIRATION_PERIOD_IN_DAYS * 24 * 60 * 60)
 
   @_buildCachedResult: (score) ->
     result = {}
@@ -31,7 +31,7 @@ class DevGib.CacheService
     result
 
   @_isCachedResultExpired: (cachedResult) ->
-    cachedResult.expiration <= new Date()
+    cachedResult[@EXPIRATION_KEY] <= new Date().getTime()
 
 
 
