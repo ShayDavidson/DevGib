@@ -6,9 +6,9 @@
  * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
 
 2. Improve the site experience:
- * Research stackoverflow batching.
  * Try to increase quota of Stackoverflow with authentication/api key.
  * Try to increase quota of Github with authentication/api key.
+ * Explain in README how to insert github auth key and stackoverflow.
 
 3. General refactor:
  * Fix in Github long repos that make it go down one line.
