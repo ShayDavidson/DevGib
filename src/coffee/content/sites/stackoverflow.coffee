@@ -2,25 +2,16 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
 
   #### Site Model Interface #####################################################
 
-  key: 'stackoverflow'
-  icon: '&#xf18d;'
-  matchingURLRegex: /^http:\/\/stackoverflow.com\/questions\/\d+/
+  key:      'stackoverflow'
+  icon:     '&#xf18d;'
+  urlRegex: /^http:\/\/stackoverflow.com\/questions\/\d+/
+  apiURL:   'https://api.stackexchange.com/2.1/questions/%s/answers?site=stackoverflow&order=desc&sort=activity&filter=default'
+  idRegex:  /\d+/
 
-  #### Implementation ###########################################################
+  #### Heuristics ###############################################################
 
-  @RESOURCE_ID_REGEX: /\d+/
-  @API_URL: 'https://api.stackexchange.com/2.1/questions/%s/answers?site=stackoverflow&order=desc&sort=activity&filter=default'
-
-  @BASE_SCORE: 2
+  @BASE_SCORE:   2
   @ANSWER_BONUS: 5
-
-  fetchScoreForURL: (url, success, failure) ->
-    resourceID = @_getResourceIDFromURL(url)
-    requestURL = _.string.sprintf(@constructor.API_URL, resourceID)
-
-    $.get(requestURL)
-      .done((data) => success(@calculateScoreFromResponseData(data)))
-      .fail(failure)
 
   calculateScoreFromResponseData: (data) ->
     allAnswers = data['items']
@@ -33,6 +24,3 @@ class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
     startingScore += Math.log(sanitiziedScore) if sanitiziedScore > 0
 
     startingScore
-
-  _getResourceIDFromURL: (url) ->
-    url.match(@constructor.RESOURCE_ID_REGEX)
