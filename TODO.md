@@ -5,13 +5,12 @@
  * Popup has Disable by site (appears with icon). Doesn't hide current anchors.
  * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
 
-2. Improve the stack overflow experience and code:
+2. Improve the site experience:
  * Research stackoverflow batching.
  * Try to increase quota of Stackoverflow with authentication/api key.
+ * Try to increase quota of Github with authentication/api key.
 
-3. Add Github scoring (+readme explanation).
-
-4. General refactor:
+3. General refactor:
  * Fix in Github long repos that make it go down one line.
  * Added which libs I used and the font awesome thing + link to license at the end of Readme.
  * Add grunt-chrome-package.

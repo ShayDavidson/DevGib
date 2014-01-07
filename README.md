@@ -26,7 +26,9 @@ __Stackoverflow__ questions are scored according to this formula:
 __Github__ repos are scored according to this formula:
 
 ```
-    NOT YET IMPLEMENTED
+    ln( <number of watchers> )
+    +
+    ln( <number of forks> )
 ```
 
 # Developers

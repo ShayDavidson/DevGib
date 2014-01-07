@@ -12,4 +12,7 @@ class DevGib.Sites.Github extends DevGib.Sites.AbstractSiteModel
   #### Heuristics ###############################################################
 
   calculateScoreFromResponseData: (data) ->
-    5
+    forks = data['forks']
+    watchers = data['watchers']
+
+    Math.log(Math.max(1, forks)) + Math.log(Math.max(1, watchers))
