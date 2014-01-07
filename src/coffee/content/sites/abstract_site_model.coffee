@@ -65,4 +65,4 @@ class DevGib.Sites.AbstractSiteModel
       .fail(failure)
 
   _getResourceIDFromURL: (url) ->
-    url.match(@idRegex)
+    _.last(url.match(@idRegex))

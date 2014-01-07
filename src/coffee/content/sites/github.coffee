@@ -7,6 +7,9 @@ class DevGib.Sites.Github extends DevGib.Sites.AbstractSiteModel
   urlRegex:       /^https:\/\/github.com\/((?!settings|account|explore|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/
   classBlackList: ['sunken-menu-item']
   apiURL:         'https://api.github.com/repos/%s'
-  idRegex:        /\d+/
+  idRegex:        /com\/(.*)/
 
   #### Heuristics ###############################################################
+
+  calculateScoreFromResponseData: (data) ->
+    5
