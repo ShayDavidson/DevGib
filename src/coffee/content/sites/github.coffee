@@ -4,10 +4,10 @@ class DevGib.Sites.Github extends DevGib.Sites.AbstractSiteModel
 
   key:            'github'
   icon:           '&#xf113;'
-  urlRegex:       /^https:\/\/github.com\/((?!settings|account|explore|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/
+  urlRegex:       /^https:\/\/github.com\/((?!settings|account|trending|explore|site|organizations|dashboard|blog|repositories)[\w\-\.]+)\/[\w\-\.]+\/?$/
   classBlackList: ['sunken-menu-item']
   apiURL:         'https://api.github.com/repos/%s?access_token=620de2f0235357839496e87d4a84ab274b7ea523'
-  idRegex:        /com\/([a-zA-Z0-9]+\/[a-zA-Z0-9]+)/
+  idRegex:        /com\/([\w\-\.]+\/[\w\-\.]+)/
 
   #### Heuristics ###############################################################
 
