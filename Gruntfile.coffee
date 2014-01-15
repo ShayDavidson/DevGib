@@ -8,7 +8,7 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: 'src/scss'
-          src: ['**/*.scss']
+          src: ['**/index.scss']
           dest: 'build/css'
           ext: '.css'
         ]

@@ -12,3 +12,10 @@
        url('#{$fa-font-path}/#{$fa-font-filename}.ttf')  format('truetype'),
        url('#{$fa-font-path}/#{$fa-font-filename}.svg')  format('svg');
 }
+
+@mixin use-fontawesome {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+}

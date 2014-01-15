@@ -1,6 +1,7 @@
 # TODO #
 
 1. Added a popup on clicking the icon:
+ * Popup has a place to insert access token.
  * Popup has Don't show score icons (also hides all current anchors). If disabled, icon turns red.
  * Popup has Disable by site (appears with icon). Doesn't hide current anchors.
  * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
@@ -11,7 +12,6 @@
  * Explain in README how to insert github auth key and stackoverflow.
 
 3. General refactor:
- * Fix in Github long repos that make it go down one line.
  * Added which libs I used and the font awesome thing + link to license at the end of Readme.
  * Add grunt-chrome-package.
  * Add grunt-contrib-concat (https://github.com/gruntjs/grunt-contrib-concat)

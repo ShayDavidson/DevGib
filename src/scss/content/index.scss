@@ -1,4 +1,4 @@
-@import 'fonts';
+@import '../common/fonts';
 @import 'animations';
 
 .devgib-icon-wrapper {
@@ -8,12 +8,7 @@
 .devgib-score-icon {
 
   $without-score-color: #a3a3a3;
-
-  font-family: 'FontAwesome';
-  font-weight: normal;
-  display: inline-block;
-  -webkit-font-smoothing: antialiased;
-
+  @include use-fontawesome;
 
   &.devgib-spinner {
     color: $without-score-color;
