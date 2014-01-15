@@ -1,4 +1,25 @@
 %link{:rel => :stylesheet, :type => 'text/css', :href => '/build/css/background/index.css'}
 
-.github= '&#xf113;'
-.github= 'hello'
+#logo
+
+
+#sites
+  .site
+    .top
+      %input.enabled{:type => :checkbox}
+      %span.icon= '&#xf113;'
+      %span= 'Github'
+      %input.token{:type => :text, :placeholder => 'Your Github access token'}
+
+  .site
+    .top
+      %input.enabled{:type => :checkbox}
+      %span.icon= '&#xf18d;'
+      %span= 'Stackoverflow'
+
+%hr
+
+#actions
+  %input{:type => :checkbox}
+  %span= 'DevGib'
+  %u.all-enabled= 'ENABLED'

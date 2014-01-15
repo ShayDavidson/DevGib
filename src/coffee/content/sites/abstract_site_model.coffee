@@ -33,6 +33,10 @@ class DevGib.Sites.AbstractSiteModel
   # Defines how many `fetchScoreForURL` calls be made in a second (in order to rate limit the calls to external APIs).
   requestsPerSecond: 10
 
+  # Defines if the site's API can receive an access token in the query string. Set it to the query string access token keyword if yes.
+  # If yes, the access token itself will be taken from the extension popup (filled by the user).
+  accessTokenKey: null
+
   #### Common Implementation ####################################################
 
   constructor: ->

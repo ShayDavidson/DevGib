@@ -1,5 +1,27 @@
 @import '../common/fonts';
 
-.github {
+body {
+  width: 300px;
+}
+
+.site {
+  margin-bottom: 15px;
+
+  .token {
+    width: 150px;
+    line-height: 17px;
+
+    position: absolute;
+    right: 7px;
+    margin-top: -2px;
+  }
+}
+
+hr {
+  clear: both;
+  margin-bottom: 15px;
+}
+
+span {
   @include use-fontawesome;
 }

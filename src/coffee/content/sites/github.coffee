@@ -8,6 +8,7 @@ class DevGib.Sites.Github extends DevGib.Sites.AbstractSiteModel
   classBlackList: ['sunken-menu-item']
   apiURL:         'https://api.github.com/repos/%s?access_token=620de2f0235357839496e87d4a84ab274b7ea523'
   idRegex:        /com\/([\w\-\.]+\/[\w\-\.]+)/
+  accessTokenKey: true
 
   #### Heuristics ###############################################################
 
