@@ -2,10 +2,24 @@
 
 body {
   width: 300px;
+  background-image: url('/assets/images/popup_background.png');
   -webkit-user-select: none;
 }
 
+#logo {
+  margin-top: 15px;
+  margin-bottom: 20px;
+
+  .title {
+    font-size: 40px;
+    margin-left: 5px;
+    position: absolute;
+  }
+}
+
 #sites {
+  padding: 8px;
+
   .site {
     margin-bottom: 10px;
 
@@ -34,15 +48,7 @@ body {
 }
 
 #actions {
-  hr {
-    $color: #616161;
-    border: 0;
-    color: $color;
-    background-color: $color;
-    height: 2px;
-    clear: both;
-    margin-bottom: 15px;
-  }
+  padding: 8px;
 }
 
 span {

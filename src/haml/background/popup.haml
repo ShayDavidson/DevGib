@@ -1,7 +1,8 @@
 %link{:rel => :stylesheet, :type => 'text/css', :href => '/build/css/background/index.css'}
 
 #logo
-
+  %img{:src => '/assets/icons/icon48.png'}
+  %span.title= 'DevGib'
 
 #sites
   .site
@@ -20,7 +21,6 @@
       %label{:for => 'site2'}= 'Stackoverflow'
 
 #actions
-  %hr
-  %input{:type => :checkbox}
-  %span= 'DevGib'
+  %input{:type => :checkbox, :id => 'toggle'}
+  %label{:for => 'toggle'}= 'DevGib is'
   %u.all-enabled= 'ENABLED'

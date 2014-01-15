@@ -5,8 +5,7 @@
  * Popup has Don't show score icons (also hides all current anchors). If disabled, icon turns red.
  * Popup has Disable by site (appears with icon). Doesn't hide current anchors.
  * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
- * Pressing on label/icon in popup also toggles checkbox (also in all).
- * When installing extension, promt to add github access key (if not saved).
+ * When installing extension, flash to add github access key (if not saved).
 
 2. Improve the site experience:
  * Try to increase quota of Stackoverflow with authentication/api key.
