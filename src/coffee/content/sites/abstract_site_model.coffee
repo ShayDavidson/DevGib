@@ -62,7 +62,8 @@ class DevGib.Sites.AbstractSiteModel
 
   fetchScoreForURL: (url, success, failure) ->
     resourceID = @_getResourceIDFromURL(url)
-    requestURL = _.string.sprintf(@apiURL, resourceID)
+    requestURL = @_interpolateResourceIDIntoURL(@apiURL, resourceID)
+    requestURL = @_urlWithAccessToken(requestURL) if @accessTokenKey
 
     $.get(requestURL)
       .done((data) => success(@calculateScoreFromResponseData(data)))
@@ -70,3 +71,9 @@ class DevGib.Sites.AbstractSiteModel
 
   _getResourceIDFromURL: (url) ->
     _.last(url.match(@idRegex))
+
+  _interpolateResourceIDIntoURL: (url, resourceID) ->
+    _.string.sprintf(url, resourceID)
+
+  _urlWithAccessToken: (url) ->
+    "#{url}?#{@accessTokenKey}=620de2f0235357839496e87d4a84ab274b7ea523"
