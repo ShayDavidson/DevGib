@@ -2,24 +2,47 @@
 
 body {
   width: 300px;
+  -webkit-user-select: none;
 }
 
-.site {
-  margin-bottom: 15px;
+#sites {
+  .site {
+    margin-bottom: 10px;
 
-  .token {
-    width: 150px;
-    line-height: 17px;
+    .icon {
+      text-align: center;
+      min-width: 15px;
+    }
 
-    position: absolute;
-    right: 7px;
-    margin-top: -2px;
+    .token {
+      width: 150px;
+      line-height: 17px;
+
+      position: absolute;
+      right: 7px;
+      margin-top: -2px;
+    }
+  }
+
+  hr {
+    $color: #e3e3e3;
+    border: 0;
+    color: $color;
+    background-color: $color;
+    height: 1px;
   }
 }
 
-hr {
-  clear: both;
-  margin-bottom: 15px;
+#actions {
+  hr {
+    $color: #616161;
+    border: 0;
+    color: $color;
+    background-color: $color;
+    height: 2px;
+    clear: both;
+    margin-bottom: 15px;
+  }
 }
 
 span {

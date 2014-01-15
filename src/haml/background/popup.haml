@@ -6,20 +6,21 @@
 #sites
   .site
     .top
-      %input.enabled{:type => :checkbox}
       %span.icon= '&#xf113;'
-      %span= 'Github'
+      %input.enabled{:type => :checkbox, :id => 'site1'}
+      %label{:for => 'site1'}= 'Github'
       %input.token{:type => :text, :placeholder => 'Your Github access token'}
+
+  %hr
 
   .site
     .top
-      %input.enabled{:type => :checkbox}
       %span.icon= '&#xf18d;'
-      %span= 'Stackoverflow'
-
-%hr
+      %input.enabled{:type => :checkbox, :id => 'site2'}
+      %label{:for => 'site2'}= 'Stackoverflow'
 
 #actions
+  %hr
   %input{:type => :checkbox}
   %span= 'DevGib'
   %u.all-enabled= 'ENABLED'
