@@ -8,6 +8,7 @@
  * When installing extension, flash to add github access key (if not saved).
 
 2. Improve the site experience:
+ * Recolor extension icon to black.
  * Try to increase quota of Stackoverflow with authentication/api key.
  * Explain in README how to insert github auth key and stackoverflow.
  * explain in README and in code how to add a new site model.
