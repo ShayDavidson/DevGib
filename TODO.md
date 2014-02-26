@@ -1,5 +1,4 @@
 # RELEASE #
- * Github user page has 3 links that should be ignored.
  * Link GitHub access token from popup to extension.
  * Check what happens when no auth key is defined for GitHub.
  * Put in README examples.
