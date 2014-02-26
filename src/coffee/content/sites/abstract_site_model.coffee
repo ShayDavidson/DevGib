@@ -76,4 +76,8 @@ class DevGib.Sites.AbstractSiteModel
     _.string.sprintf(url, resourceID)
 
   _urlWithAccessToken: (url) ->
-    "#{url}?#{@accessTokenKey}=620de2f0235357839496e87d4a84ab274b7ea523"
+    accessToken = @_userAccessTokenForSite()
+    if accessToken then "#{url}?#{@accessTokenKey}=#{accessToken}" else url
+
+  _userAccessTokenForSite: ->
+    "620de2f0235357839496e87d4a84ab274b7ea523"
