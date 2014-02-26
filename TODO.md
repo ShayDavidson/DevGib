@@ -8,8 +8,9 @@
  * When installing extension, flash to add github access key (if not saved).
 
 2. Improve the site experience:
+ * Github user page has 3 links that should be ignored.
  * Try to increase quota of Stackoverflow with authentication/api key.
- * Explain in README how to insert github auth key and stackoverflow.
+ * Explain in README how to insert github auth key.
  * explain in README and in code how to add a new site model.
 
 3. General refactor:
