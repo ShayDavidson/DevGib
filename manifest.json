@@ -1,6 +1,6 @@
 {
     "name": "DevGib",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "manifest_version": 2,
     "description": "Analyzes the quality of dev-related links before accessing them.",
     "icons": {

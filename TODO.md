@@ -1,23 +1,18 @@
-# TODO #
-
-1. Added a popup on clicking the icon:
- * Popup has a place to insert access token.
+# RELEASE #
+ * Github user page has 3 links that should be ignored.
+ * Link GitHub access token from popup to extension.
+ * Check what happens when no auth key is defined for GitHub.
+ * Put in README examples.
+ * Explain in README and in code how to add a new site model.
+ * Popup takes accounts from global place.
  * Popup has Don't show score icons (also hides all current anchors). If disabled, icon turns red.
  * Popup has Disable by site (appears with icon). Doesn't hide current anchors.
  * Clean up `index.js` file (add anchor traverse class and extract the tagged attribute to constant).
- * When installing extension, flash to add github access key (if not saved).
-
-2. Improve the site experience:
- * Github user page has 3 links that should be ignored.
- * Try to increase quota of Stackoverflow with authentication/api key.
- * Explain in README how to insert github auth key.
- * explain in README and in code how to add a new site model.
-
-3. General refactor:
  * Added which libs I used and the font awesome thing + link to license at the end of Readme.
  * Add grunt-chrome-package.
- * Add grunt-contrib-concat (https://github.com/gruntjs/grunt-contrib-concat)
- * Add grunt-contrib-uglify.
- * Add grunt source mapping for coffee?
- * Use mutation observers instead of dom events and improve performance for anchor searching (http://stackoverflow.com/questions/20582991/how-to-know-when-google-search-results-page-renders-its-results)
- * Added a default span to the icons so the links don't change places after the icon is loaded from spinner (char width).
+ * More readme and github pages info. Maybe move the insturctions there?
+
+# POSSIBLE SITE SUPPORT #
+ * Google code.
+ * Cocoacontrols (use github repo).
+ * Bitbucket.
