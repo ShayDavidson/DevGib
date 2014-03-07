@@ -4,8 +4,8 @@
     "manifest_version": 2,
     "description": "Analyzes the quality of dev-related links before accessing them.",
     "icons": {
-        "16": "assets/icons/icon16.png",
-        "48": "assets/icons/icon48.png",
+        "16":  "assets/icons/icon16.png",
+        "48":  "assets/icons/icon48.png",
         "128": "assets/icons/icon128.png" },
     "background": {
         "scripts": [
@@ -14,15 +14,19 @@
 
             "lib/js/underscore-1.5.2.min.js",
             "lib/js/underscore.ratelimit.js",
+            "lib/js/underscore.string-2.3.0.min.js",
 
-            // extensions
+            // extension
 
             "build/js/background/namespaces.js",
             "build/js/background/index.js",
             "build/js/background/popup_events.js",
             "build/js/background/abstract_site_model.js",
-            "build/js/background/sites/stackoverflow.js",
-            "build/js/background/sites/github.js"
+
+            // sites
+
+            "build/js/background/sites/github.js",
+            "build/js/background/sites/stackoverflow.js"
         ],
 	    "persistent": false
     },
@@ -40,7 +44,6 @@
 
             "lib/js/jquery-2.0.3.min.js",
             "lib/js/underscore-1.5.2.min.js",
-            "lib/js/underscore.string-2.3.0.min.js",
 
             // extension
 
