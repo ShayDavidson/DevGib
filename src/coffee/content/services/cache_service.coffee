@@ -1,4 +1,4 @@
-class DevGib.CacheService
+class DevGib.Content.CacheService
 
   #### Constants ################################################################
 

@@ -14,6 +14,5 @@ class DevGib.Background.App
 
 #### Main #####################################################################
 
-$(document).ready ->
-  window.devGibApp = new DevGib.Background.App()
-  window.devGibApp.run()
+window.devGibBackgroundApp = new DevGib.Background.App()
+$(document).ready -> window.devGibBackgroundApp.run()

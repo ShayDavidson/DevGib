@@ -1,3 +1,3 @@
 window.DevGib =
-  Icons: {}
-  Sites: {}
+  Content:
+    Icons: {}

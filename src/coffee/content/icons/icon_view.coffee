@@ -1,4 +1,4 @@
-class DevGib.Icons.IconView
+class DevGib.Content.Icons.IconView
 
   #### Constants ################################################################
 

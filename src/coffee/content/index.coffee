@@ -1,6 +1,18 @@
-class DevGib.Extension
+class DevGib.Content.App
 
     run: ->
+      @_tagAnchors()
+      @_bindToEvents()
+
+    _bindToEvents: ->
+      $(document).bind('DOMNodeInserted', @_unbindTemporarilyAndTagAnchors)
+
+    _unbindTemporarilyAndTagAnchors: ->
+      $(document).unbind('DOMNodeInserted')
+      @run()
+      $(document).bind('DOMNodeInserted', @_unbindTemporarilyAndTagAnchors)
+
+    _tagAnchors: ->
       anchors = @_getPageAnchors()
 
       _.each(anchors, (anchor) =>
@@ -12,7 +24,7 @@ class DevGib.Extension
         sanitizedURL = @_sanitizedURL(url)
 #
 #        if site = _.find(sites, (site) -> site.isURLMatching(sanitizedURL) && !site.isAnchorBlackListed(anchor))
-#          icon = new DevGib.Icons.IconController(anchor, sanitizedURL, site)
+#          icon = new DevGib.Content.Icons.IconController(anchor, sanitizedURL, site)
 #          icon.show()
       )
 
@@ -26,12 +38,7 @@ class DevGib.Extension
       $(document).find("a:not([data-devgib='tagged'])")
 
 
-app = new DevGib.Extension()
-run = -> app.run()
-runNodeInserted = ->
-  $(document).unbind 'DOMNodeInserted'
-  run()
-  $(document).bind 'DOMNodeInserted', runNodeInserted
+#### Main #####################################################################
 
-$(document).ready run
-$(document).bind 'DOMNodeInserted', runNodeInserted
+window.devGibContentScriptApp = new DevGib.Content.App()
+$(document).ready -> window.devGibBackgroundApp.run

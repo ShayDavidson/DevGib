@@ -1,4 +1,4 @@
-class DevGib.Icons.IconController
+class DevGib.Content.Icons.IconController
 
   #### Constants ################################################################
 
@@ -11,7 +11,7 @@ class DevGib.Icons.IconController
   url: null
 
   constructor: (anchorEl, @url, @siteModel) ->
-    @iconView = new DevGib.Icons.IconView(anchorEl, siteModel)
+    @iconView = new DevGib.Content.Icons.IconView(anchorEl, siteModel)
     _.bindAll(@, '_showAndCacheScore', '_showScore', '_showError', '_fetchScore')
 
   show: ->
