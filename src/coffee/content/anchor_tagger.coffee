@@ -14,7 +14,7 @@ class DevGib.Content.AnchorTagger
     $(document).bind('DOMNodeInserted', @_unbindTemporarilyAndTagAnchors)
 
   _tagAnchors: ->
-    anchors = @_getPageAnchors()
+    anchors = @_getUntaggedPageAnchors()
 
     _.each(anchors, (anchor) =>
       anchor = $(anchor)
@@ -23,10 +23,13 @@ class DevGib.Content.AnchorTagger
       url = anchor.attr('href')
       return unless url
       sanitizedURL = @_sanitizedURL(url)
-#
-#        if site = _.find(sites, (site) -> site.isURLMatching(sanitizedURL) && !site.isAnchorBlackListed(anchor))
-#          icon = new DevGib.Content.Icons.IconController(anchor, sanitizedURL, site)
-#          icon.show()
+
+      message = {url: sanitizedURL, classes: anchor.attr('class')}
+      chrome.runtime.sendMessage(message, (response) ->
+        if response.siteData
+          icon = new DevGib.Content.Icons.IconController(anchor, sanitizedURL, siteData)
+          icon.show()
+      )
     )
 
   _sanitizedURL: (url) ->
@@ -35,5 +38,5 @@ class DevGib.Content.AnchorTagger
     else
       url
 
-  _getPageAnchors: ->
+  _getUntaggedPageAnchors: ->
     $(document).find("a:not([data-devgib='tagged'])")

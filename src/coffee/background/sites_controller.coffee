@@ -11,3 +11,5 @@ class DevGib.Background.SitesController
       hash
     ), {})
 
+
+#        if site = _.find(sites, (site) -> site.isURLMatching(sanitizedURL) && !site.isAnchorBlackListed(anchor))
