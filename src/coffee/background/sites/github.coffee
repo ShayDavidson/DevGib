@@ -1,4 +1,4 @@
-class DevGib.Sites.Github extends DevGib.Sites.AbstractSiteModel
+class DevGib.Background.Sites.Github extends DevGib.Background.AbstractSiteModel
 
   #### Site Model Interface #####################################################
 

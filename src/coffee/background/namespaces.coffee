@@ -1,0 +1,3 @@
+window.DevGib =
+  Background:
+    Sites: {}

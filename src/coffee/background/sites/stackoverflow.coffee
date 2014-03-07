@@ -1,4 +1,4 @@
-class DevGib.Sites.Stackoverflow extends DevGib.Sites.AbstractSiteModel
+class DevGib.Background.Sites.Stackoverflow extends DevGib.Background.AbstractSiteModel
 
   #### Site Model Interface #####################################################
 

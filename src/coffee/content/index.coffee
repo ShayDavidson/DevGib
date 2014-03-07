@@ -1,7 +1,6 @@
 class DevGib.Extension
 
     run: ->
-      sites = @_getTargetSites()
       anchors = @_getPageAnchors()
 
       _.each(anchors, (anchor) =>
@@ -11,10 +10,10 @@ class DevGib.Extension
         url = anchor.attr('href')
         return unless url
         sanitizedURL = @_sanitizedURL(url)
-
-        if site = _.find(sites, (site) -> site.isURLMatching(sanitizedURL) && !site.isAnchorBlackListed(anchor))
-          icon = new DevGib.Icons.IconController(anchor, sanitizedURL, site)
-          icon.show()
+#
+#        if site = _.find(sites, (site) -> site.isURLMatching(sanitizedURL) && !site.isAnchorBlackListed(anchor))
+#          icon = new DevGib.Icons.IconController(anchor, sanitizedURL, site)
+#          icon.show()
       )
 
     _sanitizedURL: (url) ->
@@ -26,20 +25,9 @@ class DevGib.Extension
     _getPageAnchors: ->
       $(document).find("a:not([data-devgib='tagged'])")
 
-    _getTargetSites: ->
-      [
-        new DevGib.Sites.Stackoverflow(),
-        new DevGib.Sites.Github()
-      ]
 
-    @sharedInstance: ->
-      @_instance = new DevGib.Extension() unless @_instance
-      return @_instance
-
-
-
-
-run = -> DevGib.Extension.sharedInstance().run()
+app = new DevGib.Extension()
+run = -> app.run()
 runNodeInserted = ->
   $(document).unbind 'DOMNodeInserted'
   run()

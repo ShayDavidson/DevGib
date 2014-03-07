@@ -1,4 +1,4 @@
-class DevGib.Sites.AbstractSiteModel
+class DevGib.Background.AbstractSiteModel
 
   #### Interface ################################################################
 

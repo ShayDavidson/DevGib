@@ -9,7 +9,20 @@
         "128": "assets/icons/icon128.png" },
     "background": {
         "scripts": [
-            "build/js/background/popup_events.js"
+
+            // lib
+
+            "lib/js/underscore-1.5.2.min.js",
+            "lib/js/underscore.ratelimit.js",
+
+            // extensions
+
+            "build/js/background/namespaces.js",
+            "build/js/background/index.js",
+            "build/js/background/popup_events.js",
+            "build/js/background/abstract_site_model.js",
+            "build/js/background/sites/stackoverflow.js",
+            "build/js/background/sites/github.js"
         ],
 	    "persistent": false
     },
@@ -28,7 +41,6 @@
             "lib/js/jquery-2.0.3.min.js",
             "lib/js/underscore-1.5.2.min.js",
             "lib/js/underscore.string-2.3.0.min.js",
-            "lib/js/underscore.ratelimit.js",
 
             // extension
 
@@ -36,10 +48,7 @@
             "build/js/content/index.js",
             "build/js/content/services/cache_service.js",
             "build/js/content/icons/icon_controller.js",
-            "build/js/content/icons/icon_view.js",
-            "build/js/content/sites/abstract_site_model.js",
-            "build/js/content/sites/stackoverflow.js",
-            "build/js/content/sites/github.js"
+            "build/js/content/icons/icon_view.js"
         ],
         "css": [
 
