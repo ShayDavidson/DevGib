@@ -1,14 +1,19 @@
 class DevGib.Background.App
 
     run: ->
-      @sites = @_buildTargetSites()
+      @sites = @_buildSites()
 
-    _buildTargetSites: ->
+    _buildSites: ->
       siteClasses = _.values(DevGib.Background.Sites)
-      _.map(siteClasses, (siteClass) -> new siteClass())
+      siteObjects = _.map(siteClasses, (siteClass) -> new siteClass())
+      _.inject(siteObjects, ((hash, siteObject) ->
+        hash[siteObject.key] = siteObject
+        hash
+      ), {})
 
 
 #### Main #####################################################################
 
-app = new DevGib.Background.App()
-app.run()
+$(document).ready ->
+  window.devGibApp = new DevGib.Background.App()
+  window.devGibApp.run()
