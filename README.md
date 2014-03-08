@@ -49,3 +49,11 @@ __Watch__
 During development it is very useful to have a background task that monitors any changes to the source files and compiles and preprocess them on the fly. You can do that by running ```grunt watch```.
 
 ----
+
+# External libraries used
+
+- jQuery.
+- FontAwesome.
+- Underscore.
+- Underscore string.
+- Underscore rate limiter.
