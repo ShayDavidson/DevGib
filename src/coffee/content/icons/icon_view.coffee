@@ -21,12 +21,13 @@ class DevGib.Content.Icons.IconView
 
   anchorEl: null
   spanEl: null
-  siteModel: null
+  key: null
+  icon: null
 
-  constructor: (@anchorEl, @siteModel) ->
+  constructor: (@anchorEl, @key, @icon) ->
     @spanEl = $("<span></span>")
     @spanEl.addClass(@constructor.SCORE_ICON_CLASS)
-    @spanEl.addClass(@siteModel.key)
+    @spanEl.addClass(@key)
 
   attach: ->
     spaceEl = $("<span>&nbsp;</span>")
@@ -42,7 +43,7 @@ class DevGib.Content.Icons.IconView
 
   showSpinner: ->
     @spanEl.addClass(@constructor.SPINNER_CLASS)
-    @_showTitle(@constructor.SPINNER_TITLE, [@siteModel.key])
+    @_showTitle(@constructor.SPINNER_TITLE, [@key])
     @_showIcon(@constructor.SPINNER_ICON)
     @
 
@@ -56,8 +57,8 @@ class DevGib.Content.Icons.IconView
   showScore: (score) ->
     @spanEl.removeClass(@constructor.SPINNER_CLASS)
     @spanEl.addClass("#{@constructor.SCORE_CLASS_PREFIX}-#{score}")
-    @_showTitle(@constructor.SCORE_TITLE, [@siteModel.key, score])
-    @_showIcon(@siteModel.icon)
+    @_showTitle(@constructor.SCORE_TITLE, [@key, score])
+    @_showIcon(@icon)
     @
 
   _showTitle: (text, args = []) ->
@@ -66,6 +67,3 @@ class DevGib.Content.Icons.IconView
 
   _showIcon: (icon) ->
     @spanEl.html(icon)
-
-
-

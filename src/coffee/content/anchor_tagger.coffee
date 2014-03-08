@@ -15,7 +15,6 @@ class DevGib.Content.AnchorTagger
 
   _tagAnchors: ->
     anchors = @_getUntaggedPageAnchors()
-
     _.each(anchors, (anchor) =>
       anchor = $(anchor)
       anchor.attr('data-devgib', 'tagged')
@@ -24,10 +23,10 @@ class DevGib.Content.AnchorTagger
       return unless url
       sanitizedURL = @_sanitizedURL(url)
 
-      message = {url: sanitizedURL, classes: anchor.attr('class')}
+      message = {type: 'anchor', data: {url: sanitizedURL, classes: anchor.attr('class')}}
       chrome.runtime.sendMessage(message, (response) ->
         if response.siteData
-          icon = new DevGib.Content.Icons.IconController(anchor, sanitizedURL, siteData)
+          icon = new DevGib.Content.Icons.IconController(anchor, sanitizedURL, response.siteData)
           icon.show()
       )
     )

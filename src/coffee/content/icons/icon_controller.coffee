@@ -6,17 +6,18 @@ class DevGib.Content.Icons.IconController
 
   #### Implementation ###########################################################
 
-  siteModel: null
+  siteKey: null
   iconView: null
   url: null
 
-  constructor: (anchorEl, @url, @siteModel) ->
-    @iconView = new DevGib.Content.Icons.IconView(anchorEl, siteModel)
+  constructor: (anchorEl, @url, siteData) ->
+    @siteKey = siteData.key
+    @iconView = new DevGib.Content.Icons.IconView(anchorEl, siteData.key, siteData.icon)
     _.bindAll(@, '_showAndCacheScore', '_showScore', '_showError', '_fetchScore')
 
   show: ->
     @iconView.attach().showSpinner()
-    DevGib.CacheService.getCachedScoreForURL(@url, @_showScore, @_fetchScore)
+#    DevGib.CacheService.getCachedScoreForURL(@url, @_showScore, @_fetchScore)
 
   _showScore: (score) ->
     @iconView.showScore(@_sanitizedScore(score))
@@ -26,7 +27,7 @@ class DevGib.Content.Icons.IconController
     @_showScore(score)
 
   _fetchScore: ->
-    @siteModel.fetchScoreForURL(@url, @_showAndCacheScore, @_showError)
+#    @siteModel.fetchScoreForURL(@url, @_showAndCacheScore, @_showError)
 
   _showError: ->
     @iconView.showError()

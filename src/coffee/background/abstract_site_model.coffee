@@ -57,8 +57,14 @@ class DevGib.Background.AbstractSiteModel
 
     matchingURL && noQueryInURL && noHashInURL
 
-  isAnchorBlackListed: (anchor) ->
-    _.find(@classBlackList, (blackListedClass) -> anchor.hasClass(blackListedClass))
+  areClassesAllowed: (classesString) ->
+    classes = classesString.split(' ')
+    intersection = _.intersection(@classBlackList, classes)
+    _.isEmpty(intersection)
+
+  siteDataAsJSON: ->
+    key:  @key
+    icon: @icon
 
   fetchScoreForURL: (url, success, failure) ->
     resourceID = @_getResourceIDFromURL(url)
