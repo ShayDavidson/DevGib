@@ -58,6 +58,8 @@ class DevGib.Background.AbstractSiteModel
     matchingURL && noQueryInURL && noHashInURL
 
   areClassesAllowed: (classesString) ->
+    return true unless classesString
+
     classes = classesString.split(' ')
     intersection = _.intersection(@classBlackList, classes)
     _.isEmpty(intersection)

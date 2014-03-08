@@ -6,28 +6,35 @@ class DevGib.Content.Icons.IconController
 
   #### Implementation ###########################################################
 
-  siteKey: null
+  key: null
   iconView: null
   url: null
 
   constructor: (anchorEl, @url, siteData) ->
-    @siteKey = siteData.key
+    @key = siteData.key
     @iconView = new DevGib.Content.Icons.IconView(anchorEl, siteData.key, siteData.icon)
     _.bindAll(@, '_showAndCacheScore', '_showScore', '_showError', '_fetchScore')
 
   show: ->
     @iconView.attach().showSpinner()
-#    DevGib.CacheService.getCachedScoreForURL(@url, @_showScore, @_fetchScore)
+    DevGib.Content.CacheService.getCachedScoreForURL(@url, @_showScore, @_fetchScore)
 
   _showScore: (score) ->
     @iconView.showScore(@_sanitizedScore(score))
 
   _showAndCacheScore: (score) ->
-    DevGib.CacheService.cacheScoreForURL(@url, score)
+    DevGib.Content.CacheService.cacheScoreForURL(@url, score)
     @_showScore(score)
 
   _fetchScore: ->
-#    @siteModel.fetchScoreForURL(@url, @_showAndCacheScore, @_showError)
+    message = {type: 'score', data: {key: @key, url: @url}}
+    chrome.runtime.sendMessage(message, (response) =>
+      console.log(response)
+      if response.error
+        @_showError()
+      else
+        @_showAndCacheScore(response.score)
+    )
 
   _showError: ->
     @iconView.showError()
