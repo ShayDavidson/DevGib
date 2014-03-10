@@ -5,11 +5,25 @@ class DevGib.Background.SitesController
     @sitesByKey = _.inject(@sites, ((hash, site) -> hash[site.key] = site; hash), {})
     @_bindToEvents()
 
+  getAccessTokenForSite: (key) ->
+    @sitesByKey[key].getAccessToken()
+
   _buildSites: ->
     siteClasses = _.values(DevGib.Background.Sites)
     _.map(siteClasses, (siteClass) -> new siteClass())
 
   _bindToEvents: ->
+    @_bindToPopupEvents()
+    @_bindToContentScriptsEvents()
+
+  #### Popup Events #############################################################
+
+  _bindToPopupEvents: ->
+    $('input.token').change(-> alert('lol'))
+
+  #### Content Script Events ####################################################
+
+  _bindToContentScriptsEvents: ->
     chrome.runtime.onMessage.addListener((request, _, sendResponse) =>
       switch request.type
         when 'anchor' then @_handleAnchorRequest(request.data, sendResponse)

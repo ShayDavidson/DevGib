@@ -18,8 +18,8 @@
             // extension
             "build/js/background/namespaces.js",
             "build/js/background/sites_controller.js",
-            "build/js/background/popup_events.js",
             "build/js/background/abstract_site_model.js",
+            "build/js/background/popup.js",
 
             // sites
             "build/js/background/sites/github.js",

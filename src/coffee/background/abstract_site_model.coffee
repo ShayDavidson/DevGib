@@ -68,6 +68,9 @@ class DevGib.Background.AbstractSiteModel
     key:  @key
     icon: @icon
 
+  getAccessToken: ->
+    @accessToken ||= localStorage.getItem("access-token-#{@key}")
+
   fetchScoreForURL: (url, success, failure) ->
     resourceID = @_getResourceIDFromURL(url)
     requestURL = @_interpolateResourceIDIntoURL(@apiURL, resourceID)
@@ -84,8 +87,5 @@ class DevGib.Background.AbstractSiteModel
     _.string.sprintf(url, resourceID)
 
   _urlWithAccessToken: (url) ->
-    accessToken = @_userAccessTokenForSite()
+    accessToken = @getAccessToken()
     if accessToken then "#{url}?#{@accessTokenKey}=#{accessToken}" else url
-
-  _userAccessTokenForSite: ->
-    ''
