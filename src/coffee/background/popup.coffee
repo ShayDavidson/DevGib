@@ -7,5 +7,6 @@ $(document).ready ->
       inputField = siteRow.find('input.token')
       inputField.val(site.getAccessToken())
       inputField.keyup(=> site.setAccessToken(inputField.val()))
+      inputField.change(=> site.setAccessToken(inputField.val()))
 
   )

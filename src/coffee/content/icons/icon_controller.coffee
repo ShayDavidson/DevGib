@@ -29,7 +29,6 @@ class DevGib.Content.Icons.IconController
   _fetchScore: ->
     message = {type: 'score', data: {key: @key, url: @url}}
     chrome.runtime.sendMessage(message, (response) =>
-      console.log(response)
       if response.error
         @_showError()
       else
