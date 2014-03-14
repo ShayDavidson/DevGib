@@ -5,9 +5,6 @@ class DevGib.Background.SitesController
     @sitesByKey = _.inject(@sites, ((hash, site) -> hash[site.key] = site; hash), {})
     @_bindToEvents()
 
-  getAccessTokenForSite: (key) ->
-    @sitesByKey[key].getAccessToken()
-
   _buildSites: ->
     siteClasses = _.values(DevGib.Background.Sites)
     _.map(siteClasses, (siteClass) -> new siteClass())

@@ -69,7 +69,10 @@ class DevGib.Background.AbstractSiteModel
     icon: @icon
 
   getAccessToken: ->
-    @accessToken ||= localStorage.getItem("access-token-#{@key}")
+    localStorage.getItem("access-token-#{@key}")
+
+  setAccessToken: (val) ->
+    localStorage.setItem("access-token-#{@key}", val)
 
   fetchScoreForURL: (url, success, failure) ->
     resourceID = @_getResourceIDFromURL(url)

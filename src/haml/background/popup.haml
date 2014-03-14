@@ -1,4 +1,6 @@
 %link{:rel => :stylesheet, :type => 'text/css', :href => '/build/css/background/index.css'}
+%script{:type => 'text/javascript', :src => '/lib/js/jquery-2.0.3.min.js'}
+%script{:type => 'text/javascript', :src => '/lib/js/underscore-1.5.2.min.js'}
 %script{:type => 'text/javascript', :src => '/build/js/background/popup.js'}
 
 #logo
@@ -7,7 +9,7 @@
 
 #sites
 
-  .site
+  .site.github
     %span.icon= '&#xf113;'
     %input.enabled{:type => :checkbox, :id => 'site1'}
     %label{:for => 'site1'}= 'Github'
@@ -15,7 +17,7 @@
 
   %hr
 
-  .site
+  .site.stackoverflow
     %span.icon= '&#xf18d;'
     %input.enabled{:type => :checkbox, :id => 'site2'}
     %label{:for => 'site2'}= 'Stackoverflow'
