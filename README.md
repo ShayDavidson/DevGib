@@ -1,9 +1,6 @@
-DevGib
-======
+![devgib-logo](https://raw.github.com/iic-ninjas/DevGib/master/public/logos/logo-with-slogan.png)
 
-![devgib-logo](https://raw.github.com/iic-ninjas/DevGib/master/public/logo.png)
-
-A Chrome extension that analyzes the quality of dev-related links (e.g.: Github repositories, StackOverflow questions) before accessing them.
+DevGib is a Chrome extension that analyzes the quality of dev-related links (e.g.: Github repositories, StackOverflow questions) before accessing them.
 
 # How does it work #
 
