@@ -2,7 +2,7 @@
 
 DevGib is a Chrome extension that analyzes the quality of programming-related links (e.g.: Github repositories, StackOverflow questions) before accessing them.
 
-* [Chrome Extension Page](https://chrome.google.com/webstore/detail/devgib/pkchajlcgibonmocadnippbgjkceieeb)
+* [Download](https://chrome.google.com/webstore/detail/devgib/pkchajlcgibonmocadnippbgjkceieeb)
 * [DevGib Github Page](http://iic-ninjas.github.io/DevGib/)
 
 
