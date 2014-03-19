@@ -11,13 +11,13 @@
 
   .site.github
     %span.icon= '&#xf113;'
-    %input.enabled{:type => :checkbox, :id => 'site1'}
     %label{:for => 'site1'}= 'Github'
     %input.token{:type => :text, :placeholder => 'Your Github access token'}
+    %br
+    %a{:href => 'https://github.com/settings/applications', :style => 'font-size:12px;'}= 'Generate access token'
 
   %hr
 
   .site.stackoverflow
     %span.icon= '&#xf18d;'
-    %input.enabled{:type => :checkbox, :id => 'site2'}
     %label{:for => 'site2'}= 'Stackoverflow'

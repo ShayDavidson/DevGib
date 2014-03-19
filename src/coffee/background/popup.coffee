@@ -10,3 +10,8 @@ $(document).ready ->
       inputField.change(=> site.setAccessToken(inputField.val()))
 
   )
+
+  $('body').on('click', 'a', ->
+    chrome.tabs.create(url: $(@).attr('href'))
+    return false
+  )
