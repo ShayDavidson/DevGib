@@ -1,34 +1,14 @@
 ![devgib-logo](https://raw.github.com/iic-ninjas/DevGib/master/public/logos/logo-with-slogan.png)
 
-DevGib is a Chrome extension that analyzes the quality of dev-related links (e.g.: Github repositories, StackOverflow questions) before accessing them.
+DevGib is a Chrome extension that analyzes the quality of programming-related links (e.g.: Github repositories, StackOverflow questions) before accessing them.
 
-# How does it work #
+* [Chrome Extension Page](link)
+* [DevGib Github Page](http://iic-ninjas.github.io/DevGib/)
 
-Every analyzed anchor in a web page receives a score value between 0 and 10.
 
-## Github ##
+# Contributing
 
-__Github__ repos are scored according to this formula:
-
-```
-    ln( <number of watchers> )
-    +
-    ln( <number of forks> )
-```
-
-## Stackoverflow ##
-
-__Stackoverflow__ questions are scored according to this formula:
-
-```
-    2 as base score
-    +
-    ln( <accumulated score of all answers> )
-    +
-    4 points if the question has an accepted answer
-```
-
-# Developers
+Found a bug? Miss a feature? Want to add another ranked service to DevGib? Contribute by opening issues or pull requests.
 
 ## Grunt ##
 
