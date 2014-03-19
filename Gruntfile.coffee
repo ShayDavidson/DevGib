@@ -1,6 +1,7 @@
 module.exports = (grunt) ->
 
-  grunt.initConfig(
+  grunt.initConfig
+
     pkg: grunt.file.readJSON('package.json')
 
     sass:
@@ -43,12 +44,21 @@ module.exports = (grunt) ->
       haml:
         files: 'src/haml/**/*.haml'
         tasks: ['haml']
-  )
+
+    compress:
+      main:
+        options:
+          archive: 'DevGib.zip'
+        files: [
+          {src: ['manifest.json', 'LICENSE'] },
+          {src: ['build/**/*', 'lib/**/*', 'assets/**/*'] }
+        ]
 
   grunt.loadNpmTasks('grunt-contrib-sass')
   grunt.loadNpmTasks('grunt-contrib-coffee')
   grunt.loadNpmTasks('grunt-contrib-haml')
   grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-compress')
 
   grunt.registerTask('compile', ['sass', 'coffee', 'haml'])
   grunt.registerTask('default', ['compile'])
