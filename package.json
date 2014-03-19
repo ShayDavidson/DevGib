@@ -1,6 +1,10 @@
 {
     "name": "devgib-chrome-extension",
     "version": "0.1.0",
+    "repository":
+        { "type": "git",
+          "url" : "https://github.com/iic-ninjas/DevGib"
+        },
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-watch": "~0.5.3",
