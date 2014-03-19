@@ -44,7 +44,7 @@ module.exports = (grunt) ->
       haml:
         files: 'src/haml/**/*.haml'
         tasks: ['haml']
-    
+
     compress:
       main:
         options:
