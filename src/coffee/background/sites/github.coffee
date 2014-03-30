@@ -15,5 +15,6 @@ class DevGib.Background.Sites.Github extends DevGib.Background.AbstractSiteModel
   calculateScoreFromResponseData: (data) ->
     forks = data['forks']
     watchers = data['watchers']
+    stars = data['stargazers']
 
-    Math.log(Math.max(1, forks)) + Math.log(Math.max(1, watchers))
+    Math.log(Math.max(1, forks)) + Math.log(Math.max(1, watchers)) + Math.log(Math.max(1, stars))
