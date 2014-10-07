@@ -4,7 +4,7 @@ class DevGib.Background.Sites.Github extends DevGib.Background.AbstractSiteModel
 
   key:            'github'
   icon:           '&#xf113;'
-  urlRegex:       /^https:\/\/github.com\/((?!sessions|settings|account|trending|explore|site|organizations|dashboard|stars|blog|repositories)[\w\-\.]+)\/((?!following|followers)[\w\-\.]+)\/?$/
+  urlRegex:       /^https:\/\/github.com\/((?!sessions|settings|account|trending|explore|site|organizations|showcase|dashboard|stars|blog|repositories)[\w\-\.]+)\/((?!following|followers)[\w\-\.]+)\/?$/
   classBlackList: ['sunken-menu-item']
   apiURL:         'https://api.github.com/repos/%s'
   idRegex:        /com\/([\w\-\.]+\/[\w\-\.]+)/
