@@ -1,5 +1,7 @@
 class DevGib.Content.AnchorTagger
 
+  MAX_PARENTS_CLASS_LEVEL = 2
+
   run: ->
     @_tagAnchors()
     @_bindToEvents()
@@ -23,13 +25,24 @@ class DevGib.Content.AnchorTagger
       return unless url
       sanitizedURL = @_sanitizedURL(url)
 
-      message = {type: 'anchor', data: {url: sanitizedURL, classes: anchor.attr('class')}}
+      classes =  @_anchorAllClasses(anchor, MAX_PARENTS_CLASS_LEVEL)
+
+      message = {type: 'anchor', data: {url: sanitizedURL, classes: classes}}
       chrome.runtime.sendMessage(message, (response) ->
         if response.siteData
           icon = new DevGib.Content.Icons.IconController(anchor, sanitizedURL, response.siteData)
           icon.show()
       )
     )
+
+  _anchorAllClasses: (anchor, level) ->
+    classes = anchor.attr('class') || ""
+    return classes if level == 0
+
+    for i in [0..level]
+      parentClass = anchor.parents(":eq(#{i})").attr('class')
+      classes += " " + parentClass if parentClass
+    classes
 
   _sanitizedURL: (url) ->
     if url.indexOf('http') < 0

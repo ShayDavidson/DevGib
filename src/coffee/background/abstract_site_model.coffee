@@ -26,7 +26,8 @@ class DevGib.Background.AbstractSiteModel
 
   #### Optional -----------------------------------------------------------------
 
-  # An array of HTML classes that prevent an icon from appearing on anchors with them.
+  # An array of HTML classes that prevent an icon from appearing on anchors having them
+  # (or anchors with their parents having them, up to 2 levels up).
   # This is used for cases when an anchor is matching the URL regex but the added icon looks out of place.
   classBlackList: []
 
