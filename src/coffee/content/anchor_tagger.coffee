@@ -45,6 +45,7 @@ class DevGib.Content.AnchorTagger
     classes
 
   _sanitizedURL: (url) ->
+    url = url.replace(/#.*/,'')
     if url.indexOf('http') < 0
       "#{window.location.protocol}//#{window.location.hostname}#{url}"
     else
