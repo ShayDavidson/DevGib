@@ -1,3 +1,7 @@
+### v0.1.6 ###
+
+- Fixed error with Github ratings.
+
 ### v0.1.5 ###
 
 - Fixed error with build.
