@@ -1,3 +1,7 @@
+### v0.1.7 ###
+
+- Added blacklist of websites where DevGib won't be activated. Included Asana since it has weird behavior when having DevGib links inside their input fields.
+
 ### v0.1.6 ###
 
 - Fixed error with Github ratings.

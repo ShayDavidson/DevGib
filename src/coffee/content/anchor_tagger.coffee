@@ -1,10 +1,12 @@
 class DevGib.Content.AnchorTagger
 
+  SITES_BLACKLIST = ['app.asana.com']
   MAX_PARENTS_CLASS_LEVEL = 2
 
   run: ->
-    @_tagAnchors()
-    @_bindToEvents()
+    unless @_isDisabledOnCurrentSite()
+      @_tagAnchors()
+      @_bindToEvents()
 
   _bindToEvents: ->
     _.bindAll(@, '_unbindTemporarilyAndTagAnchors')
@@ -53,3 +55,6 @@ class DevGib.Content.AnchorTagger
 
   _getUntaggedPageAnchors: ->
     $(document).find("a:not([data-devgib='tagged'])")
+
+  _isDisabledOnCurrentSite: ->
+    SITES_BLACKLIST.indexOf(location.host) >= 0
